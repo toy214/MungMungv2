@@ -23,11 +23,24 @@ export default function LessonScreen({ route }) {
   const currentExplanation = text[currentIndex] || "No explanation available.";
 
   const speak = () => {
+  if (!currentWord || currentWord.trim() === "") {
+    console.warn("No word to speak");
+    return;
+  }
+
   try {
-    Speech.speak(currentWord, { language: 'ko', rate: 0.65 });
+    Speech.speak(currentWord, {
+      language: 'ko',
+      rate: 0.65,
+      onError: (error) => {
+        console.error("Speech failed: ", error);
+        if (Platform.OS === 'android') {
+          alert("Korean language may not be supported on your device.");
+        }
+      },
+    });
   } catch (error) {
     console.error("Speech error: ", error);
-    Speech.speak("Language not supported", { language: 'en' });
   }
 };
 
