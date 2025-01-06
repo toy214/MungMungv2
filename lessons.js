@@ -1,33 +1,127 @@
 // lessons.js
 export const lessonsData = {
-  "Lesson 1: Basics": {
+    "Lesson 1: Basics": {
     text: [
-      "Hangul consists of vowels and consonants.",
-      "For example: ㅁ (m) and ㅏ (a) combine to form 마 (ma).",
-      "Hangul is phonetic, making it easy to learn pronunciation.",
-      "Start with these basics:",
-      "ㅏ (a) [a]",
-      "ㅗ (o) [o]",
-      "ㅡ (eu) [ɯ]",
-      "ㅎ (h) [h]",
-      "Examples:",
-      "마 (ma) [ma]",
-      "바 (ba) [pa]",
-      "법 (beop) [pʌp] - Law."
+      "1. Introduce Hangul:\nConsonants (자음)/ Vowels (모음):\nEach syllable in Hangul is formed by combining a consonant and a vowel. Some syllables may also include a final consonant, called the batchim.",
+      "A. Consonants:",
+      "1. Basic Consonants (14):",
+      "ㄱ (g/k) – \"g\" as in \"go\" or \"k\" as in \"key\"",
+      "ㄴ (n) – \"n\" as in \"no\"",
+      "ㄷ (d/t) – \"d\" as in \"dog\" or \"t\" as in \"top\"",
+      "ㄹ (r/l) – \"r\" as in \"run\" or \"l\" as in \"light\"",
+      "ㅁ (m) – \"m\" as in \"man\"",
+      "ㅂ (b/p) – \"b\" as in \"boy\" or \"p\" as in \"pat\"",
+      "ㅅ (s) – \"s\" as in \"sea\"",
+      "ㅇ (ng) – Silent when at the beginning, but \"ng\" as in \"song\" when at the end",
+      "ㅈ (j) – \"j\" as in \"jump\"",
+      "ㅊ (ch) – \"ch\" as in \"cheese\"",
+      "ㅋ (k) – \"k\" as in \"key\"",
+      "ㅌ (t) – \"t\" as in \"top\"",
+      "ㅍ (p) – \"p\" as in \"pat\"",
+      "ㅎ (h) – \"h\" as in \"hat\"",
+      "2. Tense Consonants (5):",
+      "ㄲ (kk) – Stronger \"k\" sound",
+      "ㄸ (tt) – Stronger \"t\" sound",
+      "ㅃ (pp) – Stronger \"p\" sound",
+      "ㅆ (ss) – Stronger \"s\" sound",
+      "ㅉ (jj) – Stronger \"j\" sound",
+      "B. Vowels:",
+      "1. Basic Vowels (10):",
+      "ㅏ (a) – \"a\" as in \"father\"",
+      "ㅑ (ya) – \"ya\" as in \"yarn\"",
+      "ㅓ (eo) – \"eo\" as in \"bus\"",
+      "ㅕ (yeo) – \"yeo\" as in \"yawn\"",
+      "ㅗ (o) – \"o\" as in \"go\"",
+      "ㅛ (yo) – \"yo\" as in \"yo-yo\"",
+      "ㅜ (u) – \"u\" as in \"pool\"",
+      "ㅠ (yu) – \"yu\" as in \"youth\"",
+      "ㅡ (eu) – \"eu\" as in \"look\"",
+      "ㅣ (i) – \"i\" as in \"see\"",
+      "",
+      "2. Compound Vowels (11):",
+      "ㅐ (ae) – \"ae\" as in \"cat\"",
+      "ㅒ (yae) – \"yae\" as in \"yet\"",
+      "ㅔ (e) – \"e\" as in \"bed\"",
+      "ㅖ (ye) – \"ye\" as in \"yes\"",
+      "ㅘ (wa) – \"wa\" as in \"water\"",
+      "ㅙ (wae) – \"wae\" as in \"wait\"",
+      "ㅚ (oe) – \"oe\" as in \"we\"",
+      "ㅝ (wo) – \"wo\" as in \"wore\"",
+      "ㅞ (we) – \"we\" as in \"west\"",
+      "ㅟ (wi) – \"wi\" as in \"we\"",
+      "ㅢ (ui) – \"ui\" as in \"oui\"",
+      "C. Explain the Syllable Structure:\nEach syllable in Hangul is made up of at least one consonant and one vowel. The structure is usually:",
+      "• Consonant + Vowel: 예 (ye) - Yes",
+      "• Consonant + Vowel + Consonant: 학교 (hak-gyo) - School",
+      "D. Practice Reading Syllables:\nStart combining the consonants and vowels into simple syllables. Begin with easy combinations:",
+      "1. 가 (g + a) = ga",
+      "2. 나 (n + a) = na",
+      "3. 다 (d + a) = da",
+      "4. 마 (m + a) = ma",
+      "5. 가방 (ga-bang) = bag",
+      "6. 사람 (sa-ram) = human",
+      "7. 학교 (hak-gyo) = school"
     ],
     korean: [
       "",
       "",
       "",
       "",
-      "ㅏ",
-      "ㅗ",
-      "ㅡ",
+      "ㄱ",
+      "ㄴ",
+      "ㄷ",
+      "ㄹ",
+      "ㅁ",
+      "ㅂ",
+      "ㅅ",
+      "ㅇ",
+      "ㅈ",
+      "ㅊ",
+      "ㅋ",
+      "ㅌ",
+      "ㅍ",
       "ㅎ",
       "",
+      "ㄲ",
+      "ㄸ",
+      "ㅃ",
+      "ㅆ",
+      "ㅉ",
+      "",
+      "",
+      "ㅏ",
+      "ㅑ",
+      "ㅓ",
+      "ㅕ",
+      "ㅗ",
+      "ㅛ",
+      "ㅜ",
+      "ㅠ",
+      "ㅡ",
+      "ㅣ",
+      "",
+      "ㅐ",
+      "ㅒ",
+      "ㅔ",
+      "ㅖ",
+      "ㅘ",
+      "ㅙ",
+      "ㅚ",
+      "ㅝ",
+      "ㅞ",
+      "ㅟ",
+      "ㅢ",
+      "",
+      "예",
+      "학교",
+      "",
+      "가",
+      "나",
+      "다",
       "마",
-      "바",
-      "법"
+      "가방",
+      "사람",
+      "학교"
     ]
   },
   "Lesson 2: Greetings": {
@@ -104,7 +198,7 @@ export const lessonsData = {
       "십"
     ]
   },
-  "Lesson 4: Days and Time": {
+  "Lesson 4: Dates and Time": {
     text: [
       "Days of the week:",
       "월요일 (Wolyoil) - Monday [wʌɭ.jo.il]",
@@ -134,7 +228,7 @@ export const lessonsData = {
       "아침 시간"
     ]
   },
-    "Lesson 5: Food and Dining": {
+    "Lesson 5: Resturant Phrases": {
     text: [
       "Essential phrases:",
       "1. 메뉴 좀 볼 수 있을까요? (Menu jom bol su isseulkkayo?) - Can I see the menu, please? [me.nju dʑom bol su i.sɯl.k͈a.jo]",
@@ -180,7 +274,7 @@ export const lessonsData = {
       "할인"
     ]
   },
-  "Lesson 7: Travel and Directions": {
+  "Lesson 7: Useful Korean expressions for traveling": {
     text: [
       "Phrases:",
       "1. 왼쪽 (Oenjjok) - Left. [wɛn.tɕok]",
@@ -208,7 +302,7 @@ export const lessonsData = {
       "비행기"
     ]
   },
-    "Lesson 8: Family and Relationships": {
+    "Lesson 8: Family Terms": {
     text: [
       "1. Basic Family Terms:",
       "Family Members:",
@@ -272,7 +366,7 @@ export const lessonsData = {
       "네, 저는 동생이 있어요."
     ]
   },
-    "Lesson 9: Colors and Adjectives": {
+    "Lesson 9: Basic Colors": {
     text: [
       "List of Colors:",
       "빨간색 (Ppal-gan-saek) = Red",
@@ -322,7 +416,7 @@ export const lessonsData = {
       "이 옷은 무슨 색이에요?\n이 옷은 흰색이에요."
     ]
   },
-  "Lesson 10: Culture and Customs": {
+  "Lesson 10: Asking for directions": {
     text: [
       "Cultural phrases:",
       "1. 공공장소에서 미소 지으세요 (Gonggongjangsoeseo miso jieuseyo) - Smile in public. [koŋ.goŋ.dʑaŋ.so.e.seo mi.so dʑi.ɯ.se.jo]",
