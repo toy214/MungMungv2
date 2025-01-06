@@ -225,7 +225,7 @@ export const lessonsData = {
       "25th        25일         i-sip-o-il",
       "31st        31일         sam-sip-il",
       "3. Complete Date:",
-      "To say the full date, read it in this order: Month + Day."
+      "To say the full date, read it in this order: Month + Day.",
       "오늘은 1월 5일이에요. (Today is January 5th.) o-neul-eun il-wol o-il-i-e-yo.",
       "생일이 3월 15일이에요. (My birthday is March 15th.) saeng-il-i sam-wol sip-o-il-i-e-yo.",
       "- Time -",
