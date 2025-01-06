@@ -23,8 +23,13 @@ export default function LessonScreen({ route }) {
   const currentExplanation = text[currentIndex] || "No explanation available.";
 
   const speak = () => {
-    Speech.speak(currentWord, { language: 'ko', rate: .65 }); // Adjusted rate for slower speech
-  };
+  try {
+    Speech.speak(currentWord, { language: 'ko', rate: 0.65 });
+  } catch (error) {
+    console.error("Speech error: ", error);
+    Speech.speak("Language not supported", { language: 'en' });
+  }
+};
 
   const goNext = () => {
     if (currentIndex < korean.length - 1) {
