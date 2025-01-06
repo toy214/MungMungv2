@@ -312,7 +312,6 @@ export const lessonsData = {
       "버스는 오후 네 시 오 분에 도착해요."
     ]
   },
-
     "Lesson 5: Resturant Phrases": {
     text: [
       "Essential phrases:",
