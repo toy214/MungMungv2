@@ -1,6 +1,6 @@
 // lessons.js
 export const lessonsData = {
-    "Lesson 1: Basics": {
+    "Lesson 1: Hangul Alphabet": {
     text: [
       "1. Introduce Hangul:\nConsonants (자음)/ Vowels (모음):\nEach syllable in Hangul is formed by combining a consonant and a vowel. Some syllables may also include a final consonant, called the batchim.",
       "A. Consonants:",
@@ -334,7 +334,7 @@ export const lessonsData = {
       "계산서 좀 주세요."
     ]
   },
-  "Lesson 6: Shopping": {
+  "Lesson 6: At the shopping center": {
     text: [
       "Shopping essentials:",
       "1. 이거 얼마예요? (Igeo eolmayeyo?) - How much is this? [i.gʌ ʌl.ma.je.jo]",
@@ -358,7 +358,7 @@ export const lessonsData = {
       "할인"
     ]
   },
-    "Lesson 7: Travel and Directions": {
+    "Lesson 7: Useful expressions for travel": {
     text: [
       "1. At the Airport:",
       "비행기 표를 어디에서 사요? (Where can I buy a plane ticket?) Bi-haeng-gi pyo-reul eo-di-seo sa-yo?",
@@ -538,7 +538,7 @@ export const lessonsData = {
       "이 옷은 무슨 색이에요?\n이 옷은 흰색이에요."
     ]
   },
-    "Lesson 10: Asking Directions": {
+    "Lesson 10: Asking for Directions": {
     text: [
       "1. Finding a Place:",
       "저기요, 여기 근처에 [장소] 있어요? (Excuse me, is there a [place] nearby?)\nJeo-gi-yo, yeo-gi geun-cheo-e [jang-so] it-sseo-yo?",
