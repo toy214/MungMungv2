@@ -414,26 +414,54 @@ export const lessonsData = {
       "이 옷은 무슨 색이에요?\n이 옷은 흰색이에요."
     ]
   },
-  "Lesson 10: Asking for directions": {
+    "Lesson 10: Asking Directions": {
     text: [
-      "Cultural phrases:",
-      "1. 공공장소에서 미소 지으세요 (Gonggongjangsoeseo miso jieuseyo) - Smile in public. [koŋ.goŋ.dʑaŋ.so.e.seo mi.so dʑi.ɯ.se.jo]",
-      "2. 겸손하세요 (Gyeomsonhaseyo) - Be humble. [kjʌm.son.ha.se.jo]",
-      "3. 정리해주세요 (Jeongrihaejuseyo) - Tidy up. [tɕʌŋ.ɾi.hɛ.dʑu.se.jo]",
-      "4. 배움 (Baeum) - Learning. [pɛ.um]",
-      "Extra phrases:",
-      "외국 문화 (Oeguk munhwa) - Foreign culture. [we.guk mun.hwa]",
-      "학문 운동 (Hakmun undong) - Academic movement. [hak.mun un.doŋ]"
+      "1. Finding a Place:",
+      "저기요, 여기 근처에 [장소] 있어요? (Excuse me, is there a [place] nearby?)\nJeo-gi-yo, yeo-gi geun-cheo-e [jang-so] it-sseo-yo?",
+      "이 근처에 화장실이 어디에 있어요? (Where is the restroom near here?)\nI geun-cheo-e hwa-jang-sil-i eo-di-e it-sseo-yo?",
+      "...까지 어떻게 가요? (How can I get to...?)\n[...] kkaji eo-tteo-ke ga-yo?",
+      "2. Asking for Directions:",
+      "오른쪽/왼쪽으로 가야 해요? (Should I go right/left?)\nO-reun-jjok/wen-jjok-eu-ro ga-ya hae-yo?",
+      "이 길로 곧장 가면 돼요? (Can I go straight on this road?)\nI gil-lo got-jang ga-myeon dwae-yo?",
+      "멀어요? 가까워요? (Is it far? Is it close?)\nMeo-reo-yo? Ga-kka-wo-yo?",
+      "3. Asking About Transportation:",
+      "여기에서 [지하철역/버스정류장] 어떻게 가요? (How do I get to [the subway station/bus stop] from here?)\nYeo-gi-e-seo [ji-ha-cheol-yeok/beo-seu-jeong-ryu-jang] eo-tteo-ke ga-yo?",
+      "택시 타는 곳은 어디에 있어요? (Where can I catch a taxi?)\nTaek-si ta-neun go-seun eo-di-e it-sseo-yo?",
+      "몇 번 버스를 타야 해요? (Which bus should I take?)\nMyeot beon beo-seu-reul ta-ya hae-yo?",
+      "4. Example Conversations:",
+      "(1) Finding a place:",
+      "손님: 저기요, 여기 근처에 편의점 있어요? (Excuse me, is there a convenience store nearby?)\nJeo-gi-yo, yeo-gi geun-cheo-e pyeo-ui-jeom it-sseo-yo?",
+      "직원: 네, 이 길로 쭉 가면 오른쪽에 있어요. (Yes, if you go straight on this road, it’s on your right.)\nNe, i gil-lo jjok ga-myeon o-reun-jjok-e it-sseo-yo.",
+      "(2) Asking for directions:",
+      "손님: 은행까지 어떻게 가요? (How can I get to the bank?)\nEun-haeng-kkaji eo-tteo-ke ga-yo?",
+      "직원: 여기서 왼쪽으로 도세요. 그다음 두 블록 지나면 은행이 보일 거예요. (Turn left here. After two blocks, you’ll see the bank.)Yeo-gi-seo wen-jjok-eu-ro do-se-yo. Geu-da-eum du beul-lok ji-na-myeon eun-haeng-i bo-il geo-ye-yo.",
+      "(3) Asking about transportation:",
+      "손님: 버스 정류장은 어디에 있어요? (Where is the bus stop?)\nSon-nim: Beo-seu jeong-ryu-jang-eun eo-di-e it-sseo-yo?",
+      "직원: 이 길 끝에 있어요. (It’s at the end of this street.)\nI gil kkeut-e it-sseo-yo."
     ],
     korean: [
       "",
-      "공공장소에서 미소 지으세요",
-      "겸손하세요",
-      "정리해주세요",
-      "배움",
+      "저기요, 여기 근처에 [장소] 있어요?",
+      "이 근처에 화장실이 어디에 있어요?",
+      "...까지 어떻게 가요?",
       "",
-      "외국 문화",
-      "학문 운동"
+      "오른쪽/왼쪽으로 가야 해요?",
+      "이 길로 곧장 가면 돼요?",
+      "멀어요? 가까워요?",
+      "",
+      "여기에서 [지하철역/버스정류장] 어떻게 가요?",
+      "택시 타는 곳은 어디에 있어요?",
+      "몇 번 버스를 타야 해요?",
+      "",
+      "",
+      "손님: 저기요, 여기 근처에 편의점 있어요?",
+      "직원: 네, 이 길로 쭉 가면 오른쪽에 있어요.",
+      "",
+      "손님: 은행까지 어떻게 가요?",
+      "직원: 여기서 왼쪽으로 도세요. 그다음 두 블록 지나면 은행이 보일 거예요.",
+      "",
+      "손님: 버스 정류장은 어디에 있어요?",
+      "직원: 이 길 끝에 있어요."
     ]
-  }
+  },
 };
