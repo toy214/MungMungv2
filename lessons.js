@@ -86,7 +86,7 @@ export const lessonsData = {
       "ㅆ",
       "ㅉ",
       "",
-      "".
+      "",
       "ㅏ",
       "ㅑ",
       "ㅓ",
