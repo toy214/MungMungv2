@@ -45,7 +45,7 @@ export default function LessonScreen({ route }) {
       <Text style={styles.word}>{currentWord}</Text>
       <View style={styles.buttonContainer}>
         <Button title="Back" onPress={goBack} disabled={currentIndex === 0} />
-        <Button title="Hear" onPress={speak} color="#4CAF50" />
+        {currentWord && <Button title="Hear" onPress={speak} color="#4CAF50" />
         <Button title="Next" onPress={goNext} disabled={currentIndex === korean.length - 1} />
       </View>
     </View>
