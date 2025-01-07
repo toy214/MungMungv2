@@ -1,13 +1,13 @@
 import React, { useState } from 'react';
-import { View, Text, StyleSheet, Button, ScrollView, FlatList, TouchableOpacity } from 'react-native';
+import { View, Text, StyleSheet, Button, ScrollView, TouchableOpacity } from 'react-native';
 import * as Speech from 'expo-speech';
 import { lessonsData } from './lessons';
 
 export default function LessonScreen({ route }) {
   const { title } = route.params;
   const lesson = lessonsData[title];
-  const [selectedSection, setSelectedSection] = useState(null); // Section selection state
-  const [currentIndex, setCurrentIndex] = useState(0);
+  const [selectedSection, setSelectedSection] = useState(null); // Current section
+  const [currentIndex, setCurrentIndex] = useState(0); // Current item in the section
 
   if (!lesson) {
     return (
@@ -18,23 +18,8 @@ export default function LessonScreen({ route }) {
     );
   }
 
-  // Define sections for the lesson
-  const sections = {
-    Consonants: {
-      text: lesson.text.filter((_, index) => index < 20),
-      korean: lesson.korean.filter((_, index) => index < 20),
-    },
-    Vowels: {
-      text: lesson.text.filter((_, index) => index >= 20 && index < 40),
-      korean: lesson.korean.filter((_, index) => index >= 20 && index < 40),
-    },
-    Practice: {
-      text: lesson.text.filter((_, index) => index >= 40),
-      korean: lesson.korean.filter((_, index) => index >= 40),
-    },
-  };
+  const sections = lesson.sections;
 
-  // Handle Speech
   const speak = () => {
     const currentWord = sections[selectedSection]?.korean[currentIndex] || "";
     if (!currentWord.trim()) {
@@ -44,7 +29,6 @@ export default function LessonScreen({ route }) {
     Speech.speak(currentWord, { language: 'ko', rate: 0.65 });
   };
 
-  // Section content navigation
   const goNext = () => {
     if (currentIndex < sections[selectedSection].text.length - 1) {
       setCurrentIndex((prevIndex) => prevIndex + 1);
@@ -57,18 +41,17 @@ export default function LessonScreen({ route }) {
     }
   };
 
-  // Reset index and section selection
   const resetSelection = () => {
     setSelectedSection(null);
     setCurrentIndex(0);
   };
 
-  // Render section list
+  // Section Selection Screen
   if (!selectedSection) {
     return (
       <View style={styles.container}>
         <Text style={styles.title}>{title}</Text>
-        <Text style={styles.text}>Select a Section:</Text>
+        <Text style={styles.text}>Choose a Section:</Text>
         {Object.keys(sections).map((section) => (
           <TouchableOpacity
             key={section}
@@ -82,7 +65,7 @@ export default function LessonScreen({ route }) {
     );
   }
 
-  // Render section content
+  // Section Content Screen
   const sectionText = sections[selectedSection].text[currentIndex];
   const sectionKorean = sections[selectedSection].korean[currentIndex] || "";
 
