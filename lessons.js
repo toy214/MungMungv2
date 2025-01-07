@@ -252,55 +252,55 @@ export const lessonsData = {
       }
     }
   },
-    "Lesson 5: Resturant Phrases": {
+    "Lesson 5: Restaurant Phrases": {
     sections: {
-    text: [
-      "Essential phrases:",
-      "1. 메뉴 좀 볼 수 있을까요? (Menu jom bol su isseulkkayo?) - Can I see the menu, please? [me.nju dʑom bol su i.sɯl.k͈a.jo]",
-      "2. 뭐를 추천하시나요? (Mweoreul chucheonhashinayo?) - What do you recommend? [mwʌ.ɾɯl tɕʰu.tɕʰʌn.ha.ɕi.na.jo]",
-      "3. 오늘의 추천 요리가 있나요? (Oneureui chucheon yoriga innayo?) - Do you have any specials today? [o.nɯ.ɾe.ɰi tɕʰu.tɕʰʌn jo.ɾi.ga in.na.jo]",
-      "4. 김치찌개 주문할게요. (Kimchi jjigae jumunhalgeyo.) - I would like to order kimchi soup. [kim.tɕʰi tɕ͈i.gɛ dʑu.mun.hal.ge.jo]",
-      "5. 음료수 좀 주시겠어요? (Eumryosu jom jushigesseoyo?) - Can I get a drink? [ɯm.ɾjo.su dʑom dʑu.ɕi.gɛ.s͈ʌ.jo]",
-      "6. 불고기를 추가할 수 있을까요? (Bulgogireul chuga hal su isseulkkayo?) - Can we add bulgogi to our order? [pul.go.gi.ɾɯl tɕʰu.ga hal su i.sɯl.k͈a.jo]",
-      "7. 계산서 좀 주세요. (Gyesanseo jom juseyo.) - Can I have the bill, please? [kje.san.sʌ dʑom dʑu.se.jo]"
-    ],
-    korean: [
-      "",
-      "메뉴 좀 볼 수 있을까요?",
-      "뭐를 추천하시나요?",
-      "오늘의 추천 요리가 있나요?",
-      "김치찌개 주문할게요.",
-      "음료수 좀 주시겠어요?",
-      "불고기를 추가할 수 있을까요?",
-      "계산서 좀 주세요."
-    ]
+      text: [
+        "Essential phrases:",
+        "1. 메뉴 좀 볼 수 있을까요? (Menu jom bol su isseulkkayo?) - Can I see the menu, please? [me.nju dʑom bol su i.sɯl.k͈a.jo]",
+        "2. 뭐를 추천하시나요? (Mweoreul chucheonhashinayo?) - What do you recommend? [mwʌ.ɾɯl tɕʰu.tɕʰʌn.ha.ɕi.na.jo]",
+        "3. 오늘의 추천 요리가 있나요? (Oneureui chucheon yoriga innayo?) - Do you have any specials today? [o.nɯ.ɾe.ɰi tɕʰu.tɕʰʌn jo.ɾi.ga in.na.jo]",
+        "4. 김치찌개 주문할게요. (Kimchi jjigae jumunhalgeyo.) - I would like to order kimchi soup. [kim.tɕʰi tɕ͈i.gɛ dʑu.mun.hal.ge.jo]",
+        "5. 음료수 좀 주시겠어요? (Eumryosu jom jushigesseoyo?) - Can I get a drink? [ɯm.ɾjo.su dʑom dʑu.ɕi.gɛ.s͈ʌ.jo]",
+        "6. 불고기를 추가할 수 있을까요? (Bulgogireul chuga hal su isseulkkayo?) - Can we add bulgogi to our order? [pul.go.gi.ɾɯl tɕʰu.ga hal su i.sɯl.k͈a.jo]",
+        "7. 계산서 좀 주세요. (Gyesanseo jom juseyo.) - Can I have the bill, please? [kje.san.sʌ dʑom dʑu.se.jo]"
+      ],
+      korean: [
+        "",
+        "메뉴 좀 볼 수 있을까요?",
+        "뭐를 추천하시나요?",
+        "오늘의 추천 요리가 있나요?",
+        "김치찌개 주문할게요.",
+        "음료수 좀 주시겠어요?",
+        "불고기를 추가할 수 있을까요?",
+        "계산서 좀 주세요."
+      ]
     }
   },
-  "Lesson 6: At the shopping center": {
-      sections: {
-    text: [
-      "Shopping essentials:",
-      "1. 이거 얼마예요? (Igeo eolmayeyo?) - How much is this? [i.gʌ ʌl.ma.je.jo]",
-      "2. 좀 깎아주세요 (Jom kakkajuseyo) - Please give me a discount. [tɕom kak.kʰa.dʑu.se.jo]",
-      "3. 더 주세요 (Deo juseyo) - Please add more. [tʌ dʑu.se.jo]",
-      "4. 가격 (Gagyeok) - Price. [ka.gjʌk]",
-      "5. 세일 (Seil) - Sale. [se.il]",
-      "Phrases to know:",
-      "한 번 입어보세요 (Han beon ibeo boseyo) - Try it on. [han bʌn i.bʌ bo.se.jo]",
-      "할인 (Harin) - Discount. [ha.ɾin]"
-    ],
-    korean: [
-      "",
-      "이거 얼마예요",
-      "좀 깎아주세요",
-      "더 주세요",
-      "가격",
-      "세일",
-      "",
-      "한 번 입어보세요",
-      "할인"
-        ]
-      }
+  "Lesson 6: At the Shopping Center": {
+    sections: {
+      text: [
+        "Shopping essentials:",
+        "1. 이거 얼마예요? (Igeo eolmayeyo?) - How much is this? [i.gʌ ʌl.ma.je.jo]",
+        "2. 좀 깎아주세요 (Jom kakkajuseyo) - Please give me a discount. [tɕom kak.kʰa.dʑu.se.jo]",
+        "3. 더 주세요 (Deo juseyo) - Please add more. [tʌ dʑu.se.jo]",
+        "4. 가격 (Gagyeok) - Price. [ka.gjʌk]",
+        "5. 세일 (Seil) - Sale. [se.il]",
+        "Phrases to know:",
+        "한 번 입어보세요 (Han beon ibeo boseyo) - Try it on. [han bʌn i.bʌ bo.se.jo]",
+        "할인 (Harin) - Discount. [ha.ɾin]"
+      ],
+      korean: [
+        "",
+        "이거 얼마예요",
+        "좀 깎아주세요",
+        "더 주세요",
+        "가격",
+        "세일",
+        "",
+        "한 번 입어보세요",
+        "할인"
+      ]
+    }
   },
     "Lesson 7: Useful expressions for travel": {
     sections: {
