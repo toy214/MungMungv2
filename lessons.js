@@ -253,6 +253,7 @@ export const lessonsData = {
     }
   },
     "Lesson 5: Resturant Phrases": {
+    section: {
     text: [
       "Essential phrases:",
       "1. 메뉴 좀 볼 수 있을까요? (Menu jom bol su isseulkkayo?) - Can I see the menu, please? [me.nju dʑom bol su i.sɯl.k͈a.jo]",
@@ -273,8 +274,10 @@ export const lessonsData = {
       "불고기를 추가할 수 있을까요?",
       "계산서 좀 주세요."
     ]
+    }
   },
   "Lesson 6: At the shopping center": {
+      section: {
     text: [
       "Shopping essentials:",
       "1. 이거 얼마예요? (Igeo eolmayeyo?) - How much is this? [i.gʌ ʌl.ma.je.jo]",
@@ -296,7 +299,8 @@ export const lessonsData = {
       "",
       "한 번 입어보세요",
       "할인"
-    ]
+        ]
+      }
   },
     "Lesson 7: Useful expressions for travel": {
     sections: {
