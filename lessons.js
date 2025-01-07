@@ -32,7 +32,7 @@ export const lessonsData = {
         "ㅆ (ss): Stronger \"s\" sound",
         "ㅉ (jj): Stronger \"j\" sound"
       ],
-      korean: ["ㄱ", "ㄴ", "ㄷ", "ㄹ", "ㅁ", "ㅂ", "ㅅ", "ㅇ", "ㅈ", "ㅊ", "ㅋ", "ㅌ", "ㅍ", "ㅎ", "ㄲ", "ㄸ", "ㅃ", "ㅆ", "ㅉ"]
+      korean: ["","ㄱ", "ㄴ", "ㄷ", "ㄹ", "ㅁ", "ㅂ", "ㅅ", "ㅇ", "ㅈ", "ㅊ", "ㅋ", "ㅌ", "ㅍ", "ㅎ", "", "ㄲ", "ㄸ", "ㅃ", "ㅆ", "ㅉ"]
     },
     "Vowels": {
       text: [
@@ -60,15 +60,15 @@ export const lessonsData = {
         "ㅟ (wi): \"wi\" as in \"we\"",
         "ㅢ (ui): \"ui\" as in \"oui\""
       ],
-      korean: ["ㅏ", "ㅑ", "ㅓ", "ㅕ", "ㅗ", "ㅛ", "ㅜ", "ㅠ", "ㅡ", "ㅣ", "ㅐ", "ㅒ", "ㅔ", "ㅖ", "ㅘ", "ㅙ", "ㅚ", "ㅝ", "ㅞ", "ㅟ", "ㅢ"]
+      korean: ["", "ㅏ", "ㅑ", "ㅓ", "ㅕ", "ㅗ", "ㅛ", "ㅜ", "ㅠ", "ㅡ", "ㅣ","", "ㅐ", "ㅒ", "ㅔ", "ㅖ", "ㅘ", "ㅙ", "ㅚ", "ㅝ", "ㅞ", "ㅟ", "ㅢ"]
     },
     "Syllable Structure": {
       text: [
         "Each syllable in Hangul is made up of at least one consonant and one vowel. The structure is usually:",
-        "• Consonant + Vowel: 예 (ye) - Yes",
-        "• Consonant + Vowel + Consonant: 학교 (hak-gyo) - School"
+        "Consonant + Vowel: 예 (ye) - Yes",
+        "Consonant + Vowel + Consonant: 학교 (hak-gyo) - School"
       ],
-      korean: ["예", "학교"]
+      korean: ["", "예", "학교"]
     },
     "Practice Reading": {
       text: [
@@ -81,7 +81,7 @@ export const lessonsData = {
         "6. 사람 (sa-ram) = human",
         "7. 학교 (hak-gyo) = school"
       ],
-      korean: ["가", "나", "다", "마", "가방", "사람", "학교"]
+      korean: ["", "가", "나", "다", "마", "가방", "사람", "학교"]
     }
   }
 },
