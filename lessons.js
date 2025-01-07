@@ -84,8 +84,7 @@ export const lessonsData = {
       korean: ["가", "나", "다", "마", "가방", "사람", "학교"]
     }
   }
-}
-  },
+},
     "Lesson 2: Greetings": {
     text: [
       "1. 안녕하세요 (Annyeonghaseyo):\n• Formal greeting used when meeting someone on the street or entering a shop.\n• Example: “Hello!” or “Good day!”",
