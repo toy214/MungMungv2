@@ -1,13 +1,13 @@
 import React, { useState } from 'react';
-import { View, Text, StyleSheet, Button, ScrollView } from 'react-native';
+import { View, Text, StyleSheet, Button, ScrollView, FlatList, TouchableOpacity } from 'react-native';
 import * as Speech from 'expo-speech';
 import { lessonsData } from './lessons';
 
 export default function LessonScreen({ route }) {
   const { title } = route.params;
   const lesson = lessonsData[title];
+  const [selectedSection, setSelectedSection] = useState(null); // Section selection state
   const [currentIndex, setCurrentIndex] = useState(0);
-  const [selectedSection, setSelectedSection] = useState("Consonants"); // Default section
 
   if (!lesson) {
     return (
@@ -18,49 +18,35 @@ export default function LessonScreen({ route }) {
     );
   }
 
+  // Define sections for the lesson
   const sections = {
     Consonants: {
-      text: lesson.text.filter((_, index) => index < 20), // Example slice for consonants
+      text: lesson.text.filter((_, index) => index < 20),
       korean: lesson.korean.filter((_, index) => index < 20),
     },
     Vowels: {
-      text: lesson.text.filter((_, index) => index >= 20 && index < 40), // Example slice for vowels
+      text: lesson.text.filter((_, index) => index >= 20 && index < 40),
       korean: lesson.korean.filter((_, index) => index >= 20 && index < 40),
     },
     Practice: {
-      text: lesson.text.filter((_, index) => index >= 40), // Example slice for practice
+      text: lesson.text.filter((_, index) => index >= 40),
       korean: lesson.korean.filter((_, index) => index >= 40),
     },
   };
 
-  const currentSection = sections[selectedSection];
-  const currentWord = currentSection.korean[currentIndex];
-  const currentExplanation = currentSection.text[currentIndex] || "No explanation available.";
-
+  // Handle Speech
   const speak = () => {
-    if (!currentWord || currentWord.trim() === "") {
+    const currentWord = sections[selectedSection]?.korean[currentIndex] || "";
+    if (!currentWord.trim()) {
       console.warn("No word to speak");
       return;
     }
-
-    try {
-      Speech.speak(currentWord, {
-        language: 'ko',
-        rate: 0.65,
-        onError: (error) => {
-          console.error("Speech failed: ", error);
-          if (Platform.OS === 'android') {
-            alert("Korean language may not be supported on your device.");
-          }
-        },
-      });
-    } catch (error) {
-      console.error("Speech error: ", error);
-    }
+    Speech.speak(currentWord, { language: 'ko', rate: 0.65 });
   };
 
+  // Section content navigation
   const goNext = () => {
-    if (currentIndex < currentSection.korean.length - 1) {
+    if (currentIndex < sections[selectedSection].text.length - 1) {
       setCurrentIndex((prevIndex) => prevIndex + 1);
     }
   };
@@ -71,26 +57,46 @@ export default function LessonScreen({ route }) {
     }
   };
 
-  const changeSection = (section) => {
-    setSelectedSection(section);
-    setCurrentIndex(0); // Reset index when switching sections
+  // Reset index and section selection
+  const resetSelection = () => {
+    setSelectedSection(null);
+    setCurrentIndex(0);
   };
+
+  // Render section list
+  if (!selectedSection) {
+    return (
+      <View style={styles.container}>
+        <Text style={styles.title}>{title}</Text>
+        <Text style={styles.text}>Select a Section:</Text>
+        {Object.keys(sections).map((section) => (
+          <TouchableOpacity
+            key={section}
+            style={styles.sectionButton}
+            onPress={() => setSelectedSection(section)}
+          >
+            <Text style={styles.sectionText}>{section}</Text>
+          </TouchableOpacity>
+        ))}
+      </View>
+    );
+  }
+
+  // Render section content
+  const sectionText = sections[selectedSection].text[currentIndex];
+  const sectionKorean = sections[selectedSection].korean[currentIndex] || "";
 
   return (
     <ScrollView contentContainerStyle={styles.container}>
-      <View style={styles.sectionSelector}>
-        <Button title="Consonants" onPress={() => changeSection("Consonants")} />
-        <Button title="Vowels" onPress={() => changeSection("Vowels")} />
-        <Button title="Practice" onPress={() => changeSection("Practice")} />
-      </View>
       <Text style={styles.title}>{title} - {selectedSection}</Text>
-      <Text style={styles.text}>{currentExplanation}</Text>
-      <Text style={styles.word}>{currentWord}</Text>
+      <Text style={styles.text}>{sectionText}</Text>
+      <Text style={styles.word}>{sectionKorean}</Text>
       <View style={styles.buttonContainer}>
         <Button title="Back" onPress={goBack} disabled={currentIndex === 0} />
-        {currentWord && <Button title="Hear" onPress={speak} color="#4CAF50" />}
-        <Button title="Next" onPress={goNext} disabled={currentIndex === currentSection.korean.length - 1} />
+        {sectionKorean.trim() && <Button title="Hear" onPress={speak} color="#4CAF50" />}
+        <Button title="Next" onPress={goNext} disabled={currentIndex === sections[selectedSection].text.length - 1} />
       </View>
+      <Button title="Change Section" onPress={resetSelection} color="#FF5722" />
     </ScrollView>
   );
 }
@@ -102,12 +108,6 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     padding: 20,
     backgroundColor: '#FFF',
-  },
-  sectionSelector: {
-    flexDirection: 'row',
-    justifyContent: 'space-evenly',
-    marginBottom: 20,
-    width: '100%',
   },
   title: {
     fontSize: 24,
@@ -124,6 +124,18 @@ const styles = StyleSheet.create({
     fontSize: 32,
     fontWeight: 'bold',
     marginVertical: 20,
+  },
+  sectionButton: {
+    backgroundColor: '#4CAF50',
+    padding: 15,
+    marginVertical: 10,
+    borderRadius: 5,
+    width: '80%',
+    alignItems: 'center',
+  },
+  sectionText: {
+    fontSize: 18,
+    color: '#FFF',
   },
   buttonContainer: {
     flexDirection: 'row',
