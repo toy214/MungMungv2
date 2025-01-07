@@ -67,8 +67,8 @@ export default function LessonScreen({ route, navigation }) {
   }
 
   // Section Content Screen
-  const sectionText = sections[selectedSection].text[currentIndex];
-  const sectionKorean = sections[selectedSection].korean[currentIndex] || "";
+  const sectionText = sections[selectedSection]?.text[currentIndex] || "No content available.";
+  const sectionKorean = sections[selectedSection]?.korean[currentIndex] || "";
 
   return (
     <ScrollView contentContainerStyle={styles.container}>
