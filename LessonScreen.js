@@ -18,7 +18,7 @@ export default function LessonScreen({ route }) {
     );
   }
 
-  const sections = lesson.sections;
+  const sections = lesson.sections || {}; // Ensure fallback if sections are undefined
 
   const speak = () => {
     const currentWord = sections[selectedSection]?.korean[currentIndex] || "";
@@ -49,7 +49,7 @@ export default function LessonScreen({ route }) {
   // Section Selection Screen
   if (!selectedSection) {
     return (
-      <View style={styles.container}>
+      <ScrollView contentContainerStyle={styles.container}>
         <Text style={styles.title}>{title}</Text>
         <Text style={styles.text}>Choose a Section:</Text>
         {Object.keys(sections).map((section) => (
@@ -61,7 +61,8 @@ export default function LessonScreen({ route }) {
             <Text style={styles.sectionText}>{section}</Text>
           </TouchableOpacity>
         ))}
-      </View>
+        <Button title="Go Back to Lessons" onPress={() => route.params.onGoBack()} />
+      </ScrollView>
     );
   }
 
