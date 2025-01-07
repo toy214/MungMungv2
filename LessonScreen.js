@@ -18,7 +18,7 @@ export default function LessonScreen({ route, navigation }) {
     );
   }
 
-  const sections = lesson.sections || {}; // Ensure fallback if sections are undefined
+  const sections = lesson.sections || {}; // Fallback if sections are undefined
 
   const speak = () => {
     const currentWord = sections[selectedSection]?.korean[currentIndex] || "";
