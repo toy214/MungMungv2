@@ -9,6 +9,10 @@ export default function LessonScreen({ route, navigation }) {
   const [selectedSection, setSelectedSection] = useState(null); // Current section
   const [currentIndex, setCurrentIndex] = useState(0); // Current item in the section
 
+  // Debugging logs
+  console.log("Title received:", title);
+  console.log("Lessons available:", Object.keys(lessonsData));
+
   if (!lesson) {
     return (
       <View style={styles.container}>
@@ -18,7 +22,15 @@ export default function LessonScreen({ route, navigation }) {
     );
   }
 
-  const sections = lesson.sections || {}; // Fallback if sections are undefined
+  const sections = lesson.sections || {};
+  if (Object.keys(sections).length === 0) {
+    return (
+      <View style={styles.container}>
+        <Text style={styles.title}>{title}</Text>
+        <Text style={styles.text}>No sections available for this lesson.</Text>
+      </View>
+    );
+  }
 
   const speak = () => {
     const currentWord = sections[selectedSection]?.korean[currentIndex] || "";
@@ -61,7 +73,16 @@ export default function LessonScreen({ route, navigation }) {
             <Text style={styles.sectionText}>{section}</Text>
           </TouchableOpacity>
         ))}
-        <Button title="Go Back to Lessons" onPress={() => navigation.goBack()} />
+        <Button
+          title="Go Back to Lessons"
+          onPress={() => {
+            if (navigation && navigation.goBack) {
+              navigation.goBack();
+            } else {
+              console.warn("Navigation not available.");
+            }
+          }}
+        />
       </ScrollView>
     );
   }
