@@ -1,6 +1,5 @@
-// LessonScreen.js
 import React, { useState } from 'react';
-import { View, Text, StyleSheet, Button } from 'react-native';
+import { View, Text, StyleSheet, Button, ScrollView } from 'react-native';
 import * as Speech from 'expo-speech';
 import { lessonsData } from './lessons';
 
@@ -8,6 +7,7 @@ export default function LessonScreen({ route }) {
   const { title } = route.params;
   const lesson = lessonsData[title];
   const [currentIndex, setCurrentIndex] = useState(0);
+  const [selectedSection, setSelectedSection] = useState("Consonants"); // Default section
 
   if (!lesson) {
     return (
@@ -18,34 +18,49 @@ export default function LessonScreen({ route }) {
     );
   }
 
-  const { text, korean } = lesson;
-  const currentWord = korean[currentIndex];
-  const currentExplanation = text[currentIndex] || "No explanation available.";
+  const sections = {
+    Consonants: {
+      text: lesson.text.filter((_, index) => index < 20), // Example slice for consonants
+      korean: lesson.korean.filter((_, index) => index < 20),
+    },
+    Vowels: {
+      text: lesson.text.filter((_, index) => index >= 20 && index < 40), // Example slice for vowels
+      korean: lesson.korean.filter((_, index) => index >= 20 && index < 40),
+    },
+    Practice: {
+      text: lesson.text.filter((_, index) => index >= 40), // Example slice for practice
+      korean: lesson.korean.filter((_, index) => index >= 40),
+    },
+  };
+
+  const currentSection = sections[selectedSection];
+  const currentWord = currentSection.korean[currentIndex];
+  const currentExplanation = currentSection.text[currentIndex] || "No explanation available.";
 
   const speak = () => {
-  if (!currentWord || currentWord.trim() === "") {
-    console.warn("No word to speak");
-    return;
-  }
+    if (!currentWord || currentWord.trim() === "") {
+      console.warn("No word to speak");
+      return;
+    }
 
-  try {
-    Speech.speak(currentWord, {
-      language: 'ko',
-      rate: 0.65,
-      onError: (error) => {
-        console.error("Speech failed: ", error);
-        if (Platform.OS === 'android') {
-          alert("Korean language may not be supported on your device.");
-        }
-      },
-    });
-  } catch (error) {
-    console.error("Speech error: ", error);
-  }
-};
+    try {
+      Speech.speak(currentWord, {
+        language: 'ko',
+        rate: 0.65,
+        onError: (error) => {
+          console.error("Speech failed: ", error);
+          if (Platform.OS === 'android') {
+            alert("Korean language may not be supported on your device.");
+          }
+        },
+      });
+    } catch (error) {
+      console.error("Speech error: ", error);
+    }
+  };
 
   const goNext = () => {
-    if (currentIndex < korean.length - 1) {
+    if (currentIndex < currentSection.korean.length - 1) {
       setCurrentIndex((prevIndex) => prevIndex + 1);
     }
   };
@@ -56,17 +71,27 @@ export default function LessonScreen({ route }) {
     }
   };
 
+  const changeSection = (section) => {
+    setSelectedSection(section);
+    setCurrentIndex(0); // Reset index when switching sections
+  };
+
   return (
-    <View style={styles.container}>
-      <Text style={styles.title}>{title}</Text>
+    <ScrollView contentContainerStyle={styles.container}>
+      <View style={styles.sectionSelector}>
+        <Button title="Consonants" onPress={() => changeSection("Consonants")} />
+        <Button title="Vowels" onPress={() => changeSection("Vowels")} />
+        <Button title="Practice" onPress={() => changeSection("Practice")} />
+      </View>
+      <Text style={styles.title}>{title} - {selectedSection}</Text>
       <Text style={styles.text}>{currentExplanation}</Text>
       <Text style={styles.word}>{currentWord}</Text>
       <View style={styles.buttonContainer}>
         <Button title="Back" onPress={goBack} disabled={currentIndex === 0} />
         {currentWord && <Button title="Hear" onPress={speak} color="#4CAF50" />}
-        <Button title="Next" onPress={goNext} disabled={currentIndex === korean.length - 1} />
+        <Button title="Next" onPress={goNext} disabled={currentIndex === currentSection.korean.length - 1} />
       </View>
-    </View>
+    </ScrollView>
   );
 }
 
@@ -77,6 +102,12 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     padding: 20,
     backgroundColor: '#FFF',
+  },
+  sectionSelector: {
+    flexDirection: 'row',
+    justifyContent: 'space-evenly',
+    marginBottom: 20,
+    width: '100%',
   },
   title: {
     fontSize: 24,
