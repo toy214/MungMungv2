@@ -9,7 +9,7 @@ const lessons = [
   { id: '5', title: 'Lesson 5: Resturant Phrases', description: 'Essential phrases for ordering food and names of common Korean dishes.' },
   { id: '6', title: 'Lesson 6: At the shopping center', description: 'Vocabulary for shopping and phrases for asking prices.' },
   { id: '7', title: 'Lesson 7: Useful expressions for travel', description: 'Basic phrases for navigating and asking for directions.' },
-  { id: '8', title: 'Lesson 8: Family terms', description: 'Learn terms for family members and expressing relationships.' },
+  { id: '8', title: 'Lesson 8: Family Terms', description: 'Learn terms for family members and expressing relationships.' },
   { id: '9', title: 'Lesson 9: Basic Colors', description: 'Explore common colors and simple descriptive sentences.' },
   { id: '10', title: 'Lesson 10: Asking for Directions', description: 'Important cultural phrases and polite language.' },
 ];
