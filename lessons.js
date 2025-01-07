@@ -6,7 +6,7 @@ export const lessonsData = {
       text: [
         "Introduce Hangul:\nConsonants (자음)/ Vowels (모음): Each syllable in Hangul is formed by combining a consonant and a vowel. Some syllables may also include a final consonant, called the batchim."
       ],
-      korean: ["자음", "모음", "받침"]
+      korean: [""]
     },
     "Consonants": {
       text: [
