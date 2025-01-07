@@ -3,7 +3,7 @@ import { View, Text, StyleSheet, Button, ScrollView, TouchableOpacity } from 're
 import * as Speech from 'expo-speech';
 import { lessonsData } from './lessons';
 
-export default function LessonScreen({ route }) {
+export default function LessonScreen({ route, navigation }) {
   const { title } = route.params;
   const lesson = lessonsData[title];
   const [selectedSection, setSelectedSection] = useState(null); // Current section
@@ -61,7 +61,7 @@ export default function LessonScreen({ route }) {
             <Text style={styles.sectionText}>{section}</Text>
           </TouchableOpacity>
         ))}
-        <Button title="Go Back to Lessons" onPress={() => route.params.onGoBack()} />
+        <Button title="Go Back to Lessons" onPress={() => navigation.goBack()} />
       </ScrollView>
     );
   }
