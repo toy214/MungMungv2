@@ -48,17 +48,21 @@ export default function LessonScreen({ route, navigation }) {
 
   // Section Selection Screen
   if (!selectedSection) {
+    const sectionKeys = Object.keys(sections);
+
     return (
       <ScrollView contentContainerStyle={styles.container}>
         <Text style={styles.title}>{title}</Text>
         <Text style={styles.text}>Choose a Section:</Text>
-        {Object.keys(sections).map((section) => (
+        {sectionKeys.map((section, index) => (
           <TouchableOpacity
             key={section}
             style={styles.sectionButton}
             onPress={() => setSelectedSection(section)}
           >
-            <Text style={styles.sectionText}>{section}</Text>
+            <Text style={styles.sectionText}>
+              {title.split(":")[0]}-{index + 1}: {section}
+            </Text>
           </TouchableOpacity>
         ))}
         <Button title="Go Back to Lessons" onPress={() => navigation.goBack()} />
@@ -72,8 +76,9 @@ export default function LessonScreen({ route, navigation }) {
 
   return (
     <ScrollView contentContainerStyle={styles.container}>
+      {/* Display the lesson and section name */}
       <Text style={styles.title}>
-        {title} - {selectedSection || "Section"}
+        {title.split(":")[0]}-{Object.keys(sections).indexOf(selectedSection) + 1}: {selectedSection}
       </Text>
       <Text style={styles.text}>{sectionText}</Text>
       <Text style={styles.word}>{sectionKorean}</Text>
