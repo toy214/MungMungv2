@@ -68,13 +68,14 @@ export default function LessonScreen({ route, navigation }) {
   }
 
   // Section Content Screen
+  const sectionIndex = Object.keys(sections).indexOf(selectedSection) + 1; // Get the correct section index
   const sectionText = sections[selectedSection]?.text[currentIndex] || "No content available.";
   const sectionKorean = sections[selectedSection]?.korean[currentIndex] || "";
 
   return (
     <ScrollView contentContainerStyle={styles.container}>
       <Text style={styles.lessonTitle}>{title}</Text> {/* Lesson always displayed on top */}
-      <Text style={styles.sectionHeader}>{`${lessonNumber}-${Object.keys(sections).indexOf(selectedSection) + 1}. ${selectedSection}`}</Text>
+      <Text style={styles.sectionHeader}>{`${lessonNumber}-${sectionIndex}. ${selectedSection}`}</Text> {/* Correctly formatted section */}
       <Text style={styles.text}>{sectionText}</Text>
       <Text style={styles.word}>{sectionKorean}</Text>
       <View style={styles.buttonContainer}>
