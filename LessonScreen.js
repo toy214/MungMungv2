@@ -4,7 +4,7 @@ import * as Speech from 'expo-speech';
 import { lessonsData } from './lessons';
 
 export default function LessonScreen({ route, navigation }) {
-  const { title } = route.params;
+  const { title } = route.params; // The lesson title, e.g., "Lesson 1: Hangul Alphabet"
   const lesson = lessonsData[title];
   const [selectedSection, setSelectedSection] = useState(null); // Current section
   const [currentIndex, setCurrentIndex] = useState(0); // Current item in the section
@@ -19,6 +19,7 @@ export default function LessonScreen({ route, navigation }) {
   }
 
   const sections = lesson.sections || {}; // Fallback if sections are undefined
+  const lessonNumber = title.split(' ')[1]; // Extracts the lesson number dynamically
 
   const speak = () => {
     const currentWord = sections[selectedSection]?.korean[currentIndex] || "";
@@ -48,21 +49,17 @@ export default function LessonScreen({ route, navigation }) {
 
   // Section Selection Screen
   if (!selectedSection) {
-    const sectionKeys = Object.keys(sections);
-
     return (
       <ScrollView contentContainerStyle={styles.container}>
-        <Text style={styles.title}>{title}</Text>
-        <Text style={styles.text}>Choose a Section:</Text>
-        {sectionKeys.map((section, index) => (
+        <Text style={styles.lessonTitle}>{title}</Text> {/* Display lesson title */}
+        <Text style={styles.headerText}>Choose a Section:</Text>
+        {Object.keys(sections).map((section, index) => (
           <TouchableOpacity
             key={section}
             style={styles.sectionButton}
             onPress={() => setSelectedSection(section)}
           >
-            <Text style={styles.sectionText}>
-              {title.split(":")[0]}-{index + 1}: {section}
-            </Text>
+            <Text style={styles.sectionText}>{`${lessonNumber}-${index + 1}. ${section}`}</Text> {/* Format as "1-1. Section Name" */}
           </TouchableOpacity>
         ))}
         <Button title="Go Back to Lessons" onPress={() => navigation.goBack()} />
@@ -76,10 +73,8 @@ export default function LessonScreen({ route, navigation }) {
 
   return (
     <ScrollView contentContainerStyle={styles.container}>
-      {/* Display the lesson and section name */}
-      <Text style={styles.title}>
-        {title.split(":")[0]}-{Object.keys(sections).indexOf(selectedSection) + 1}: {selectedSection}
-      </Text>
+      <Text style={styles.lessonTitle}>{title}</Text> {/* Lesson always displayed on top */}
+      <Text style={styles.sectionHeader}>{`${lessonNumber}-${Object.keys(sections).indexOf(selectedSection) + 1}. ${selectedSection}`}</Text>
       <Text style={styles.text}>{sectionText}</Text>
       <Text style={styles.word}>{sectionKorean}</Text>
       <View style={styles.buttonContainer}>
@@ -100,10 +95,23 @@ const styles = StyleSheet.create({
     padding: 20,
     backgroundColor: '#FFF',
   },
-  title: {
-    fontSize: 24,
+  lessonTitle: {
+    fontSize: 26,
     fontWeight: 'bold',
     marginBottom: 10,
+    textAlign: 'center',
+  },
+  headerText: {
+    fontSize: 18,
+    fontWeight: 'bold',
+    marginBottom: 20,
+  },
+  sectionHeader: {
+    fontSize: 20,
+    fontWeight: 'bold',
+    marginBottom: 15,
+    textAlign: 'center',
+    color: '#4CAF50',
   },
   text: {
     fontSize: 16,
