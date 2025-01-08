@@ -4,7 +4,6 @@ import { createStackNavigator, TransitionPresets } from '@react-navigation/stack
 import MenuScreen from './MenuScreen';
 import AboutScreen from './AboutScreen';
 import SettingsScreen from './SettingsScreen';
-import QuizScreen from './QuizScreen';
 import TitleScreen from './TitleScreen';
 import HomeScreen from './HomeScreen';
 import LessonScreen from './LessonScreen';
