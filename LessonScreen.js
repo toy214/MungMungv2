@@ -1,4 +1,3 @@
-// LessonScreen.js
 import React, { useState } from 'react';
 import {
   View,
@@ -13,7 +12,7 @@ import * as Speech from 'expo-speech';
 import { lessonsData } from './lessons';
 
 export default function LessonScreen({ route, navigation }) {
-  const { title } = route.params; // The lesson title, e.g., "Lesson 1: Hangul Alphabet"
+  const { title } = route.params; // Lesson title
   const lesson = lessonsData[title];
   const [selectedSection, setSelectedSection] = useState(null); // Current section
   const [currentIndex, setCurrentIndex] = useState(0); // Current item in the section
@@ -38,12 +37,12 @@ export default function LessonScreen({ route, navigation }) {
     );
   }
 
-  const lessonNumber = title.split(' ')[1]; // Extracts the lesson number dynamically
+  const lessonNumber = title.split(' ')[1]; // Extract the lesson number dynamically
 
   const speak = () => {
     const currentWord =
-      sections[selectedSection]?.korean[currentIndex] || '';
-    if (!currentWord.trim()) {
+      sections[selectedSection]?.korean[currentIndex]?.trim() || "";
+    if (!currentWord) {
       console.warn('No word to speak');
       return;
     }
@@ -83,7 +82,7 @@ export default function LessonScreen({ route, navigation }) {
   if (!selectedSection) {
     return (
       <ScrollView contentContainerStyle={styles.container}>
-        <Text style={styles.lessonTitle}>{title}</Text> {/* Display lesson title */}
+        <Text style={styles.lessonTitle}>{title}</Text>
         <Text style={styles.headerText}>Choose a Section:</Text>
         {Object.keys(sections).map((section, index) => (
           <TouchableOpacity
@@ -105,26 +104,25 @@ export default function LessonScreen({ route, navigation }) {
   const sectionIndex =
     Object.keys(sections).indexOf(selectedSection) + 1; // Get the correct section index
   const sectionText =
-    sections[selectedSection]?.text[currentIndex] ||
-    'No content available.';
+    (sections[selectedSection]?.text[currentIndex] || "No content available.").trim();
   const sectionKorean =
-    sections[selectedSection]?.korean[currentIndex] || '';
+    (sections[selectedSection]?.korean[currentIndex] || "").trim();
 
   return (
     <ScrollView contentContainerStyle={styles.container}>
-      <Text style={styles.lessonTitle}>{title}</Text> {/* Lesson always displayed on top */}
+      <Text style={styles.lessonTitle}>{title}</Text>
       <Text style={styles.sectionHeader}>
         {sectionIndex}. {selectedSection}
       </Text>
-      <Text style={styles.text}>{sectionText}</Text>
-      <Text style={styles.word}>{sectionKorean}</Text>
+      {sectionText && <Text style={styles.text}>{sectionText}</Text>}
+      {sectionKorean && <Text style={styles.word}>{sectionKorean}</Text>}
       <View style={styles.buttonContainer}>
         <Button
           title="Back"
           onPress={goBack}
           disabled={currentIndex === 0}
         />
-        {sectionKorean.trim() && (
+        {sectionKorean && (
           <Button
             title="Hear"
             onPress={speak}
@@ -136,7 +134,7 @@ export default function LessonScreen({ route, navigation }) {
           onPress={goNext}
           disabled={
             currentIndex ===
-            sections[selectedSection].text.length - 1
+            sections[selectedSection]?.text.length - 1
           }
         />
       </View>
