@@ -71,14 +71,6 @@ export default function App() {
             headerStyle: [styles.header, { backgroundColor: '#9C27B0' }],
           }}
         />
-        <Stack.Screen
-          name="Quiz"
-          component={QuizScreen}
-          options={{
-            headerTitle: 'Quiz Time',
-            headerStyle: [styles.header, { backgroundColor: '#FFC107' }],
-          }}
-        />
       </Stack.Navigator>
     </NavigationContainer>
   );
