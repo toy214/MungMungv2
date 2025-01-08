@@ -59,7 +59,9 @@ export default function LessonScreen({ route, navigation }) {
             style={styles.sectionButton}
             onPress={() => setSelectedSection(section)}
           >
-            <Text style={styles.sectionText}>{`${index + 1}. ${section}`}</Text> {/* Updated: Display as 1., 2., 3., etc */}
+            <Text style={styles.sectionText}>
+              {index + 1}. {section}
+            </Text> {/* Corrected: Use a single Text component */}
           </TouchableOpacity>
         ))}
         <Button title="Go Back to Lessons" onPress={() => navigation.goBack()} />
@@ -76,8 +78,8 @@ export default function LessonScreen({ route, navigation }) {
     <ScrollView contentContainerStyle={styles.container}>
       <Text style={styles.lessonTitle}>{title}</Text> {/* Lesson always displayed on top */}
       <Text style={styles.sectionHeader}>
-        {`${sectionIndex}. ${selectedSection}`}
-      </Text> {/* Updated: Simplified section numbering */}
+        {sectionIndex}. {selectedSection}
+      </Text> {/* Corrected: Use a single Text component */}
       <Text style={styles.text}>{sectionText}</Text>
       <Text style={styles.word}>{sectionKorean}</Text>
       <View style={styles.buttonContainer}>
