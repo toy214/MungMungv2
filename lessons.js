@@ -93,7 +93,7 @@ export const lessonsData = {
           "안녕 (Annyeong): Informal greeting used among friends, peers, or younger people.",
           "여보세요 (Yeoboseyo): Used when starting a phone call."
         ],
-        korean: ["안녕하세요", "안녕", "여보세요"]
+        korean: ["안녕하세요.", "안녕", "여보세요"]
       },
       "Polite Expressions": {
         text: [
