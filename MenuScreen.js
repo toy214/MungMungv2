@@ -8,7 +8,6 @@ export default function MenuScreen({ navigation }) {
       <Button title="Start Learning" onPress={() => navigation.navigate('Home')} color="#4CAF50" />
       <Button title="About" onPress={() => navigation.navigate('About')} color="#2196F3" />
       <Button title="Settings" onPress={() => navigation.navigate('Settings')} color="#FF9800" />
-      <Button title="Quiz" onPress={() => navigation.navigate('Quiz')} color="#E91E63" />
     </View>
   );
 }
