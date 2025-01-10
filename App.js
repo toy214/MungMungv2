@@ -3,12 +3,10 @@ import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator, TransitionPresets } from '@react-navigation/stack';
 import MenuScreen from './MenuScreen';
 import AboutScreen from './AboutScreen';
-import SettingsScreen from './SettingsScreen';
 import TitleScreen from './TitleScreen';
 import HomeScreen from './HomeScreen';
 import LessonScreen from './LessonScreen';
 import { StyleSheet } from 'react-native';
-import { AppProvider } from './AppContext'; 
 
 const Stack = createStackNavigator();
 
