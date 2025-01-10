@@ -7,7 +7,6 @@ export default function MenuScreen({ navigation }) {
       <Text style={styles.title}>MungMung</Text>
       <Button title="Start Learning" onPress={() => navigation.navigate('Home')} color="#4CAF50" />
       <Button title="About" onPress={() => navigation.navigate('About')} color="#2196F3" />
-      <Button title="Settings" onPress={() => navigation.navigate('Settings')} color="#FF9800" />
     </View>
   );
 }
