@@ -1,37 +1,63 @@
-import React from 'react';
-import { View, Text, StyleSheet, Switch } from 'react-native';
-import { useAppContext } from './App';
+import React, { useState } from 'react';
+import { View, Text, StyleSheet, Picker } from 'react-native';
 
 export default function SettingsScreen() {
-  const { darkMode, toggleDarkMode, themeStyles } = useAppContext();
-
-  const containerStyle = { backgroundColor: themeStyles.backgroundColor, flex: 1, padding: 20 };
-  const textStyle = { color: themeStyles.textColor };
+  const [textSize, setTextSize] = useState('Medium');
+  const [voiceGender, setVoiceGender] = useState('Male');
 
   return (
-    <View style={containerStyle}>
-      <Text style={[styles.title, textStyle]}>Settings</Text>
-      {/* Dark Mode Toggle */}
+    <View style={styles.container}>
+      <Text style={styles.title}>Settings</Text>
+      {/* Text Size Adjustment */}
       <View style={styles.settingRow}>
-        <Text style={textStyle}>Enable Dark Mode</Text>
-        <Switch value={darkMode} onValueChange={toggleDarkMode} />
+        <Text style={styles.settingLabel}>Text Size</Text>
+        <Picker
+          selectedValue={textSize}
+          style={styles.picker}
+          onValueChange={(value) => setTextSize(value)}
+        >
+          <Picker.Item label="Small" value="Small" />
+          <Picker.Item label="Medium" value="Medium" />
+          <Picker.Item label="Large" value="Large" />
+        </Picker>
+      </View>
+      {/* Pronunciation Voice */}
+      <View style={styles.settingRow}>
+        <Text style={styles.settingLabel}>Pronunciation Voice</Text>
+        <Picker
+          selectedValue={voiceGender}
+          style={styles.picker}
+          onValueChange={(value) => setVoiceGender(value)}
+        >
+          <Picker.Item label="Male" value="Male" />
+          <Picker.Item label="Female" value="Female" />
+        </Picker>
       </View>
     </View>
   );
 }
 
 const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    padding: 20,
+    backgroundColor: '#FFF',
+  },
   title: {
     fontSize: 24,
     fontWeight: 'bold',
     marginBottom: 20,
   },
   settingRow: {
-    flexDirection: 'row',
-    alignItems: 'center',
-    justifyContent: 'space-between',
-    paddingVertical: 10,
-    borderBottomWidth: 1,
-    borderBottomColor: '#ccc',
+    marginBottom: 15,
+  },
+  settingLabel: {
+    fontSize: 16,
+    marginBottom: 5,
+  },
+  picker: {
+    height: 40,
+    backgroundColor: '#EFEFEF',
+    borderRadius: 5,
   },
 });
