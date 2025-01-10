@@ -545,11 +545,10 @@ export const lessonsData = {
     "가장 좋아하는 색깔은 무엇이에요?\n저는 파란색을 좋아해요.",
     "이건 무슨 색이에요?\n이건 빨간색이에요.",
     "이 옷은 무슨 색이에요?\n이 옷은 흰색이에요."
-  ]
-}
+          ]
+        }
       }
-    }
- },
+    },
     "Lesson 10: Asking for Directions": {
     sections: {
       "Finding a Place": {
