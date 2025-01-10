@@ -5,8 +5,21 @@ export default function MenuScreen({ navigation }) {
   return (
     <View style={styles.container}>
       <Text style={styles.title}>MungMung</Text>
-      <Button title="Start Learning" onPress={() => navigation.navigate('Home')} color="#4CAF50" />
-      <Button title="About" onPress={() => navigation.navigate('About')} color="#2196F3" />
+      <Button
+        title="Start Learning"
+        onPress={() => navigation.navigate('Home')}
+        color="#4CAF50"
+      />
+      <Button
+        title="About"
+        onPress={() => navigation.navigate('About')}
+        color="#2196F3"
+      />
+      <Button
+        title="Quiz"
+        onPress={() => navigation.navigate('Quiz')} // Navigate to QuizScreen
+        color="#9C27B0"
+      />
     </View>
   );
 }
