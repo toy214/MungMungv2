@@ -12,68 +12,58 @@ const Stack = createStackNavigator();
 
 export default function App() {
   return (
-    <AppProvider>
-      <NavigationContainer>
-        <Stack.Navigator
-          initialRouteName="Title"
-          screenOptions={{
-            headerStyle: styles.header,
-            headerTintColor: '#FFF',
-            headerTitleStyle: styles.headerTitle,
-            cardStyle: { backgroundColor: '#FFF8E1' },
-            ...TransitionPresets.SlideFromRightIOS, // Smooth transition between screens
+    <NavigationContainer>
+      <Stack.Navigator
+        initialRouteName="Title"
+        screenOptions={{
+          headerStyle: styles.header,
+          headerTintColor: '#FFF',
+          headerTitleStyle: styles.headerTitle,
+          cardStyle: { backgroundColor: '#FFF8E1' },
+          ...TransitionPresets.SlideFromRightIOS, // Smooth transition between screens
+        }}
+      >
+        <Stack.Screen
+          name="Title"
+          component={TitleScreen}
+          options={{
+            headerShown: false,
           }}
-        >
-          <Stack.Screen
-            name="Title"
-            component={TitleScreen}
-            options={{
-              headerShown: false,
-            }}
-          />
-          <Stack.Screen
-            name="Menu"
-            component={MenuScreen}
-            options={{
-              headerTitle: 'Main Menu',
-              headerStyle: [styles.header, { backgroundColor: '#FF7043' }],
-            }}
-          />
-          <Stack.Screen
-            name="Home"
-            component={HomeScreen}
-            options={{
-              headerTitle: 'Home',
-              headerStyle: [styles.header, { backgroundColor: '#4CAF50' }],
-            }}
-          />
-          <Stack.Screen
-            name="Lesson"
-            component={LessonScreen}
-            options={{
-              headerTitle: 'Lesson Details',
-              headerStyle: [styles.header, { backgroundColor: '#FFAB40' }],
-            }}
-          />
-          <Stack.Screen
-            name="About"
-            component={AboutScreen}
-            options={{
-              headerTitle: 'About Us',
-              headerStyle: [styles.header, { backgroundColor: '#2196F3' }],
-            }}
-          />
-          <Stack.Screen
-            name="Settings"
-            component={SettingsScreen}
-            options={{
-              headerTitle: 'Settings',
-              headerStyle: [styles.header, { backgroundColor: '#9C27B0' }],
-            }}
-          />
-        </Stack.Navigator>
-      </NavigationContainer>
-    </AppProvider>
+        />
+        <Stack.Screen
+          name="Menu"
+          component={MenuScreen}
+          options={{
+            headerTitle: 'Main Menu',
+            headerStyle: [styles.header, { backgroundColor: '#FF7043' }],
+          }}
+        />
+        <Stack.Screen
+          name="Home"
+          component={HomeScreen}
+          options={{
+            headerTitle: 'Home',
+            headerStyle: [styles.header, { backgroundColor: '#4CAF50' }],
+          }}
+        />
+        <Stack.Screen
+          name="Lesson"
+          component={LessonScreen}
+          options={{
+            headerTitle: 'Lesson Details',
+            headerStyle: [styles.header, { backgroundColor: '#FFAB40' }],
+          }}
+        />
+        <Stack.Screen
+          name="About"
+          component={AboutScreen}
+          options={{
+            headerTitle: 'About Us',
+            headerStyle: [styles.header, { backgroundColor: '#2196F3' }],
+          }}
+        />
+      </Stack.Navigator>
+    </NavigationContainer>
   );
 }
 
