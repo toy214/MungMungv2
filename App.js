@@ -12,64 +12,65 @@ import LessonScreen from './LessonScreen';
 
 const Stack = createStackNavigator();
 
-// Create App Context
+// Create Context
 const AppContext = createContext();
 
-// Global Context Provider
+// Context Provider
 function AppProvider({ children }) {
   const [darkMode, setDarkMode] = useState(false);
-  const [voiceGender, setVoiceGender] = useState('Male');
 
-  // Load saved settings on app load
+  // Load settings from AsyncStorage
   useEffect(() => {
     const loadSettings = async () => {
       try {
         const savedDarkMode = await AsyncStorage.getItem('darkMode');
-        const savedVoiceGender = await AsyncStorage.getItem('voiceGender');
-
         if (savedDarkMode !== null) setDarkMode(JSON.parse(savedDarkMode));
-        if (savedVoiceGender !== null) setVoiceGender(savedVoiceGender);
       } catch (error) {
-        console.error('Error loading settings', error);
+        console.error('Failed to load dark mode setting', error);
       }
     };
 
     loadSettings();
   }, []);
 
-  // Save settings to AsyncStorage
-  const saveSetting = async (key, value) => {
+  // Save dark mode to AsyncStorage
+  const toggleDarkMode = async () => {
+    const newValue = !darkMode;
+    setDarkMode(newValue);
     try {
-      await AsyncStorage.setItem(key, JSON.stringify(value));
+      await AsyncStorage.setItem('darkMode', JSON.stringify(newValue));
     } catch (error) {
-      console.error(`Error saving ${key}`, error);
+      console.error('Failed to save dark mode setting', error);
     }
   };
 
-  const toggleDarkMode = () => {
-    const newValue = !darkMode;
-    setDarkMode(newValue);
-    saveSetting('darkMode', newValue);
-  };
-
-  const changeVoiceGender = (gender) => {
-    setVoiceGender(gender);
-    saveSetting('voiceGender', gender);
-  };
+  // Global theme styles
+  const themeStyles = darkMode
+    ? {
+        backgroundColor: '#121212',
+        textColor: '#FFFFFF',
+        cardColor: '#1E1E1E',
+        headerColor: '#333333',
+      }
+    : {
+        backgroundColor: '#FFFFFF',
+        textColor: '#000000',
+        cardColor: '#FFF8E1',
+        headerColor: '#6200EE',
+      };
 
   return (
-    <AppContext.Provider value={{ darkMode, toggleDarkMode, voiceGender, changeVoiceGender }}>
+    <AppContext.Provider value={{ darkMode, toggleDarkMode, themeStyles }}>
       {children}
     </AppContext.Provider>
   );
 }
 
-// Use Context in Screens
+// Custom Hook to Access Context
 export function useAppContext() {
   return useContext(AppContext);
 }
 
-// Main App Component
 export default function App() {
   return (
     <AppProvider>
@@ -77,11 +78,14 @@ export default function App() {
         <Stack.Navigator
           initialRouteName="Title"
           screenOptions={({ route }) => ({
-            headerStyle: styles.header,
-            headerTintColor: '#FFF',
-            headerTitleStyle: styles.headerTitle,
-            cardStyle: { backgroundColor: '#FFF8E1' },
-            ...(route.name === 'Settings' && { headerStyle: { backgroundColor: '#9C27B0' } }),
+            headerStyle: { backgroundColor: useAppContext().themeStyles.headerColor },
+            headerTintColor: useAppContext().themeStyles.textColor,
+            cardStyle: { backgroundColor: useAppContext().themeStyles.cardColor },
+            headerTitleStyle: {
+              fontSize: 20,
+              fontWeight: 'bold',
+              color: useAppContext().themeStyles.textColor,
+            },
             ...TransitionPresets.SlideFromRightIOS,
           })}
         >
@@ -97,7 +101,6 @@ export default function App() {
             component={MenuScreen}
             options={{
               headerTitle: 'Main Menu',
-              headerStyle: [styles.header, { backgroundColor: '#FF7043' }],
             }}
           />
           <Stack.Screen
@@ -105,7 +108,6 @@ export default function App() {
             component={HomeScreen}
             options={{
               headerTitle: 'Home',
-              headerStyle: [styles.header, { backgroundColor: '#4CAF50' }],
             }}
           />
           <Stack.Screen
@@ -113,7 +115,6 @@ export default function App() {
             component={LessonScreen}
             options={{
               headerTitle: 'Lesson Details',
-              headerStyle: [styles.header, { backgroundColor: '#FFAB40' }],
             }}
           />
           <Stack.Screen
@@ -121,7 +122,6 @@ export default function App() {
             component={AboutScreen}
             options={{
               headerTitle: 'About Us',
-              headerStyle: [styles.header, { backgroundColor: '#2196F3' }],
             }}
           />
           <Stack.Screen
@@ -129,7 +129,6 @@ export default function App() {
             component={SettingsScreen}
             options={{
               headerTitle: 'Settings',
-              headerStyle: [styles.header, { backgroundColor: '#9C27B0' }],
             }}
           />
         </Stack.Navigator>
@@ -137,14 +136,3 @@ export default function App() {
     </AppProvider>
   );
 }
-
-const styles = StyleSheet.create({
-  header: {
-    backgroundColor: '#6200EE',
-    shadowColor: 'transparent', // Remove header shadow
-  },
-  headerTitle: {
-    fontSize: 20,
-    fontWeight: 'bold',
-  },
-});
