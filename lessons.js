@@ -292,13 +292,13 @@ export const lessonsData = {
     sections: {
       "Shopping Phrases": {
         text: [
-          "이거 었어요? (Igeo itsseoyo?) - Do you have this?",  
+          "이거 있어요? (Igeo itsseoyo?) - Do you have this?",  
           "이거 얼마예요? (Igeo eolmayeyo?) - How much is this?",
           "좀 깎아주세요 (Jom kakkajuseyo) - Please give me a discount.",
           "더 주세요 (Deo juseyo) - Please add more."
         ],
         korean: [
-          "이거 었어요",  
+          "이거 있어요",  
           "이거 얼마예요",
           "좀 깎아주세요",
           "더 주세요"
