@@ -1,11 +1,15 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { View, Text, StyleSheet, TouchableOpacity } from 'react-native';
-import DropDownPicker from 'react-native-dropdown-picker'; // Install with npm/yarn
+import DropDownPicker from 'react-native-dropdown-picker';
 import { useAppContext } from './AppContext';
 import * as Speech from 'expo-speech';
 
 export default function SettingsScreen() {
   const { textSize, setTextSize, voiceGender, setVoiceGender, dynamicTextStyle } = useAppContext();
+
+  // State for dropdown open/close behavior
+  const [textSizeOpen, setTextSizeOpen] = useState(false);
+  const [voiceGenderOpen, setVoiceGenderOpen] = useState(false);
 
   const testVoice = () => {
     const voiceId =
@@ -16,33 +20,44 @@ export default function SettingsScreen() {
   return (
     <View style={styles.container}>
       <Text style={[styles.title, dynamicTextStyle()]}>Settings</Text>
+
       {/* Text Size Adjustment */}
       <View style={styles.settingRow}>
         <Text style={[styles.label, dynamicTextStyle()]}>Text Size</Text>
         <DropDownPicker
+          open={textSizeOpen}
+          setOpen={setTextSizeOpen}
+          value={textSize}
+          setValue={setTextSize}
           items={[
             { label: 'Small', value: 'Small' },
             { label: 'Medium', value: 'Medium' },
             { label: 'Large', value: 'Large' },
           ]}
-          defaultValue={textSize}
-          containerStyle={styles.dropdown}
-          onChangeItem={(item) => setTextSize(item.value)}
+          style={styles.dropdown}
+          containerStyle={styles.dropdownContainer}
+          dropDownContainerStyle={styles.dropdownContainer}
         />
       </View>
-      {/* Pronunciation Voice */}
+
+      {/* Voice Gender Selection */}
       <View style={styles.settingRow}>
         <Text style={[styles.label, dynamicTextStyle()]}>Voice Gender</Text>
         <DropDownPicker
+          open={voiceGenderOpen}
+          setOpen={setVoiceGenderOpen}
+          value={voiceGender}
+          setValue={setVoiceGender}
           items={[
             { label: 'Male', value: 'Male' },
             { label: 'Female', value: 'Female' },
           ]}
-          defaultValue={voiceGender}
-          containerStyle={styles.dropdown}
-          onChangeItem={(item) => setVoiceGender(item.value)}
+          style={styles.dropdown}
+          containerStyle={styles.dropdownContainer}
+          dropDownContainerStyle={styles.dropdownContainer}
         />
       </View>
+
       <TouchableOpacity style={styles.button} onPress={testVoice}>
         <Text style={styles.buttonText}>Test Voice</Text>
       </TouchableOpacity>
@@ -66,7 +81,14 @@ const styles = StyleSheet.create({
     marginBottom: 10,
   },
   dropdown: {
+    backgroundColor: '#EFEFEF',
+    borderRadius: 5,
+    borderWidth: 1,
+    borderColor: '#CCC',
+  },
+  dropdownContainer: {
     height: 40,
+    marginBottom: 20,
   },
   button: {
     marginTop: 20,
