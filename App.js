@@ -6,6 +6,7 @@ import AboutScreen from './AboutScreen';
 import TitleScreen from './TitleScreen';
 import HomeScreen from './HomeScreen';
 import LessonScreen from './LessonScreen';
+import QuizScreen from './QuizScreen'; // Import QuizScreen
 import { StyleSheet } from 'react-native';
 
 const Stack = createStackNavigator();
@@ -60,6 +61,14 @@ export default function App() {
           options={{
             headerTitle: 'About Us',
             headerStyle: [styles.header, { backgroundColor: '#2196F3' }],
+          }}
+        />
+        <Stack.Screen
+          name="Quiz"
+          component={QuizScreen} // Add QuizScreen
+          options={{
+            headerTitle: 'Quiz',
+            headerStyle: [styles.header, { backgroundColor: '#9C27B0' }],
           }}
         />
       </Stack.Navigator>
