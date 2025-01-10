@@ -8,14 +8,21 @@ export default function QuizScreen() {
   const [score, setScore] = useState(0);
   const [showAnswer, setShowAnswer] = useState(false);
   const [selectedAnswer, setSelectedAnswer] = useState('');
+  const [error, setError] = useState(false); // Track if there's an error
 
   useEffect(() => {
-    generateQuizQuestions(10); // Generate 10 questions
+    try {
+      generateQuizQuestions(10); // Generate 10 questions
+    } catch (e) {
+      console.error('Error generating quiz questions:', e);
+      setError(true);
+    }
   }, []);
 
   const generateQuizQuestions = (limit) => {
     const flatData = [];
-    
+    console.log('Starting question generation...');
+
     // Flatten lessonsData into a single list of question candidates
     Object.keys(lessonsData).forEach((lessonKey) => {
       const sections = lessonsData[lessonKey].sections;
@@ -38,6 +45,9 @@ export default function QuizScreen() {
         }
       });
     });
+
+    console.log(`Valid questions found: ${flatData.length}`);
+    if (flatData.length === 0) throw new Error('No valid questions found.');
 
     // Shuffle and limit questions
     const selectedData = shuffleArray(flatData).slice(0, limit);
@@ -80,6 +90,15 @@ export default function QuizScreen() {
     setSelectedAnswer('');
     setCurrentQuestionIndex(currentQuestionIndex + 1);
   };
+
+  if (error) {
+    return (
+      <View style={styles.container}>
+        <Text style={styles.title}>Error</Text>
+        <Text style={styles.errorText}>Unable to generate quiz questions. Please check the lessons data.</Text>
+      </View>
+    );
+  }
 
   if (questions.length === 0) {
     return (
@@ -143,6 +162,11 @@ const styles = StyleSheet.create({
     fontSize: 24,
     fontWeight: 'bold',
     marginBottom: 20,
+    textAlign: 'center',
+  },
+  errorText: {
+    fontSize: 16,
+    color: 'red',
     textAlign: 'center',
   },
   question: {
