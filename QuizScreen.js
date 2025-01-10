@@ -14,62 +14,46 @@ export default function QuizScreen() {
   }, []);
 
   const generateQuizQuestions = (limit) => {
-    const questionsArray = [];
-    const validSections = [];
-
-    // Preprocess valid sections
+    const flatData = [];
+    
+    // Flatten lessonsData into a single list of question candidates
     Object.keys(lessonsData).forEach((lessonKey) => {
       const sections = lessonsData[lessonKey].sections;
       Object.keys(sections).forEach((sectionKey) => {
         const section = sections[sectionKey];
         if (section.korean && section.text) {
-          validSections.push(section);
+          section.korean.forEach((word, index) => {
+            const text = section.text[index];
+            if (isValidQuestion(word, text)) {
+              const splitText = text.split('=');
+              if (splitText.length > 1) {
+                flatData.push({
+                  type: 'koreanToEnglish',
+                  word: word.trim(),
+                  english: splitText[1].trim(),
+                });
+              }
+            }
+          });
         }
       });
     });
 
-    // Generate questions from valid sections
-    validSections.forEach((section) => {
-      section.korean.forEach((word, index) => {
-        const englishText = section.text[index];
-        if (isValidQuestion(word, englishText)) {
-          const splitText = englishText.split('=');
-          if (splitText.length > 1) {
-            const correctAnswer = splitText[1].trim();
-            questionsArray.push({
-              type: 'koreanToEnglish',
-              question: `What is the meaning of "${word}"?`,
-              options: generateOptions(correctAnswer, section.text.map((t) => t.split('=')[1]?.trim())),
-              correctAnswer: correctAnswer,
-            });
-          }
-        }
-      });
+    // Shuffle and limit questions
+    const selectedData = shuffleArray(flatData).slice(0, limit);
 
-      section.text.forEach((text, index) => {
-        const koreanWord = section.korean[index];
-        if (isValidQuestion(koreanWord, text)) {
-          const splitText = text.split('=');
-          if (splitText.length > 1) {
-            const correctAnswer = koreanWord;
-            questionsArray.push({
-              type: 'englishToKorean',
-              question: `What is the Korean translation of "${splitText[0].trim()}"?`,
-              options: generateOptions(correctAnswer, section.korean),
-              correctAnswer: correctAnswer,
-            });
-          }
-        }
-      });
-    });
+    // Generate questions
+    const questionsArray = selectedData.map((item) => ({
+      question: `What is the meaning of "${item.word}"?`,
+      options: generateOptions(item.english, flatData.map((d) => d.english)),
+      correctAnswer: item.english,
+    }));
 
-    // Shuffle and limit the questions
-    const limitedQuestions = shuffleArray(questionsArray).slice(0, limit);
-    setQuestions(limitedQuestions);
+    setQuestions(questionsArray);
   };
 
   const isValidQuestion = (word, text) => {
-    if (!word || !text) return false; // Skip empty entries
+    if (!word || !text) return false; // Skip empty or missing entries
     if (word.trim() === '' || text.trim() === '') return false; // Skip empty strings
     if (text.includes(word)) return false; // Skip embedded answers
     return true;
