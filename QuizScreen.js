@@ -7,65 +7,71 @@ export default function QuizScreen() {
   const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
   const [score, setScore] = useState(0);
   const [showAnswer, setShowAnswer] = useState(false);
-  const [selectedAnswer, setSelectedAnswer] = useState(''); // Track selected answer
+  const [selectedAnswer, setSelectedAnswer] = useState('');
 
   useEffect(() => {
-    generateQuizQuestions();
+    generateQuizQuestions(10); // Generate 10 questions
   }, []);
 
-  const generateQuizQuestions = () => {
+  const generateQuizQuestions = (limit) => {
     const questionsArray = [];
+    const validSections = [];
+
+    // Preprocess valid sections
     Object.keys(lessonsData).forEach((lessonKey) => {
       const sections = lessonsData[lessonKey].sections;
       Object.keys(sections).forEach((sectionKey) => {
         const section = sections[sectionKey];
-
         if (section.korean && section.text) {
-          section.korean.forEach((word, index) => {
-            const englishText = section.text[index];
-            if (isValidQuestion(word, englishText)) {
-              const splitText = englishText.split('=');
-              if (splitText.length > 1) {
-                const correctAnswer = splitText[1].trim();
-                questionsArray.push({
-                  type: 'koreanToEnglish',
-                  question: `What is the meaning of "${word}"?`,
-                  options: generateOptions(correctAnswer, section.text.map((t) => t.split('=')[1]?.trim())),
-                  correctAnswer: correctAnswer,
-                });
-              }
-            }
-          });
-        }
-
-        if (section.text && section.korean) {
-          section.text.forEach((text, index) => {
-            const koreanWord = section.korean[index];
-            if (isValidQuestion(koreanWord, text)) {
-              const splitText = text.split('=');
-              if (splitText.length > 1) {
-                const correctAnswer = koreanWord;
-                questionsArray.push({
-                  type: 'englishToKorean',
-                  question: `What is the Korean translation of "${splitText[0].trim()}"?`,
-                  options: generateOptions(correctAnswer, section.korean),
-                  correctAnswer: correctAnswer,
-                });
-              }
-            }
-          });
+          validSections.push(section);
         }
       });
     });
 
-    setQuestions(shuffleArray(questionsArray));
+    // Generate questions from valid sections
+    validSections.forEach((section) => {
+      section.korean.forEach((word, index) => {
+        const englishText = section.text[index];
+        if (isValidQuestion(word, englishText)) {
+          const splitText = englishText.split('=');
+          if (splitText.length > 1) {
+            const correctAnswer = splitText[1].trim();
+            questionsArray.push({
+              type: 'koreanToEnglish',
+              question: `What is the meaning of "${word}"?`,
+              options: generateOptions(correctAnswer, section.text.map((t) => t.split('=')[1]?.trim())),
+              correctAnswer: correctAnswer,
+            });
+          }
+        }
+      });
+
+      section.text.forEach((text, index) => {
+        const koreanWord = section.korean[index];
+        if (isValidQuestion(koreanWord, text)) {
+          const splitText = text.split('=');
+          if (splitText.length > 1) {
+            const correctAnswer = koreanWord;
+            questionsArray.push({
+              type: 'englishToKorean',
+              question: `What is the Korean translation of "${splitText[0].trim()}"?`,
+              options: generateOptions(correctAnswer, section.korean),
+              correctAnswer: correctAnswer,
+            });
+          }
+        }
+      });
+    });
+
+    // Shuffle and limit the questions
+    const limitedQuestions = shuffleArray(questionsArray).slice(0, limit);
+    setQuestions(limitedQuestions);
   };
 
   const isValidQuestion = (word, text) => {
-    // Check if the entry is valid (not a title, placeholder, or embedded answer)
-    if (!word || !text) return false; // Skip empty or missing entries
+    if (!word || !text) return false; // Skip empty entries
     if (word.trim() === '' || text.trim() === '') return false; // Skip empty strings
-    if (text.includes(word)) return false; // Skip if the answer is embedded in the question
+    if (text.includes(word)) return false; // Skip embedded answers
     return true;
   };
 
@@ -78,7 +84,7 @@ export default function QuizScreen() {
   const shuffleArray = (array) => array.sort(() => Math.random() - 0.5);
 
   const handleAnswer = (selectedAnswer) => {
-    setSelectedAnswer(selectedAnswer); // Track the selected answer
+    setSelectedAnswer(selectedAnswer);
     if (selectedAnswer === questions[currentQuestionIndex].correctAnswer) {
       setScore(score + 1);
     }
@@ -87,7 +93,7 @@ export default function QuizScreen() {
 
   const nextQuestion = () => {
     setShowAnswer(false);
-    setSelectedAnswer(''); // Reset selected answer for the next question
+    setSelectedAnswer('');
     setCurrentQuestionIndex(currentQuestionIndex + 1);
   };
 
