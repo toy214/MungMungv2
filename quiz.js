@@ -55,7 +55,7 @@ export const quizData = [
     options: ['Mother', 'Father', 'Brother', 'Sister'],
   },
   {
-    question: 'How do you say "good night" informally in Korean?',
+    question: 'How do you say "Good night" informally in Korean?',
     correctAnswer: '잘 자요',
     options: ['안녕히 계세요', '잘 자요', '안녕히 주무세요', '안녕히 가세요'],
   },
