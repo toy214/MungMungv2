@@ -89,24 +89,24 @@ export const lessonsData = {
     sections: {
       "Basic Greetings": {
         text: [
-          "안녕하세요 (Annyeonghaseyo): Formal greeting used when meeting someone on the street or entering a shop.",
-          "안녕 (Annyeong): Informal greeting used among friends, peers, or younger people.",
-          "여보세요 (Yeoboseyo): Used when starting a phone call."
+          "안녕하세요 (Annyeonghaseyo) - Formal greeting used when meeting someone on the street or entering a shop.",
+          "안녕 (Annyeong) - Informal greeting used among friends, peers, or younger people.",
+          "여보세요 (Yeoboseyo) - Used when starting a phone call."
         ],
         korean: ["안녕하세요.", "안녕", "여보세요"]
       },
       "Polite Expressions": {
         text: [
-          "반갑습니다 (Bangapseumnida): Used when meeting someone for the first time or after a long time.",
-          "수고하세요 (Sugohaseyo): A polite phrase used to appreciate someone’s hard work."
+          "반갑습니다 (Bangapseumnida) - Used when meeting someone for the first time or after a long time.",
+          "수고하세요 (Sugohaseyo) - A polite phrase used to appreciate someone’s hard work."
         ],
         korean: ["반갑습니다", "수고하세요"]
       },
       "Saying Goodbye": {
         text: [
-          "안녕히 가세요 (Annyeonghi gaseyo): Formal 'Goodbye' (to someone leaving).",
-          "안녕히 계세요 (Annyeonghi gyeseyo): Formal 'Goodbye' (to someone staying).",
-          "잘 자요 (Jal jayo): Informal 'Good night.'",
+          "안녕히 가세요 (Annyeonghi gaseyo) - Formal 'Goodbye' (to someone leaving).",
+          "안녕히 계세요 (Annyeonghi gyeseyo) - Formal 'Goodbye' (to someone staying).",
+          "잘 자요 (Jal jayo) - Informal 'Good night.'",
           "안녕히 주무세요 (Annyeonghi jumuseyo): Formal 'Good night.'"
         ],
         korean: ["안녕히 가세요", "안녕히 계세요", "잘 자요", "안녕히 주무세요"]
@@ -132,31 +132,31 @@ export const lessonsData = {
       },
       "Native Numbers": {
         text: [
-          "1 = 하나 (Hana)",
-          "2 = 둘 (Dul)",
-          "3 = 셋 (Set)",
-          "4 = 넷 (Net)",
-          "5 = 다섯 (Daseot)",
-          "6 = 여섯 (Yeoseot)",
-          "7 = 일곱 (Ilgop)",
-          "8 = 여덟 (Yeodeol)",
-          "9 = 아홉 (Ahop)",
-          "10 = 열 (Yeol)"
+          "1 - 하나 (Hana)",
+          "2 - 둘 (Dul)",
+          "3 - 셋 (Set)",
+          "4 - 넷 (Net)",
+          "5 - 다섯 (Daseot)",
+          "6 - 여섯 (Yeoseot)",
+          "7 - 일곱 (Ilgop)",
+          "8 - 여덟 (Yeodeol)",
+          "9 - 아홉 (Ahop)",
+          "10 - 열 (Yeol)"
         ],
         korean: ["하나", "둘", "셋", "넷", "다섯", "여섯", "일곱", "여덟", "아홉", "열"]
       },
       "Sino-Korean Numbers": {
         text: [
-          "1 = 일 (Il)",
-          "2 = 이 (I)",
-          "3 = 삼 (Sam)",
-          "4 = 사 (Sa)",
-          "5 = 오 (O)",
-          "6 = 육 (Yuk)",
-          "7 = 칠 (Chil)",
-          "8 = 팔 (Pal)",
-          "9 = 구 (Gu)",
-          "10 = 십 (Sip)"
+          "1 - 일 (Il)",
+          "2 - 이 (I)",
+          "3 - 삼 (Sam)",
+          "4 - 사 (Sa)",
+          "5 - 오 (O)",
+          "6 - 육 (Yuk)",
+          "7 - 칠 (Chil)",
+          "8 - 팔 (Pal)",
+          "9 - 구 (Gu)",
+          "10 - 십 (Sip)"
         ],
         korean: ["일", "이", "삼", "사", "오", "육", "칠", "팔", "구", "십"]
       },
@@ -169,7 +169,7 @@ export const lessonsData = {
           "오늘은 3월 15일입니다. (Oneureun samwol sib-oilimnida) - Today is March 15th.",
           "전화번호는 010-1234-5678입니다. (Jeonhwabeonhoneun gong-il-gong il-i-sam-sa o-yuk-chil-pal-imnida) - The phone number is 010-1234-5678."
         ],
-        korean: ["", "사람 한 명", "사과 두 개", "오늘은 3월 15일입니다.", "전화번호는 010-1234-5678입니다."]
+        korean: ["", "사람 한 명", "사과 두 개", "", "오늘은 3월 15일입니다.", "전화번호는 010-1234-5678입니다."]
       }
     }
   },
@@ -239,7 +239,7 @@ export const lessonsData = {
           "8:30 → 여덟 시 삼십 분 (yeo-deol si sam-sip bun)",
           "10:45 → 열 시 사십오 분 (yeol si sa-sip-o bun)"
         ],
-        korean: ["", "1시", "2시", "3시", "4시", "5시", "12시", "", "1분", "10분", "15분", "30분", "45분", "세 시 십오 분", "여덟 시 삼십 분", "열 시 사십오 분"]
+        korean: ["", "1시", "2시", "3시", "4시", "5시", "12시", "", "1분", "10분", "15분", "30분", "45분", "", "", "세 시 십오 분", "여덟 시 삼십 분", "열 시 사십오 분"]
       },
       "Practice": {
         text: [
@@ -256,9 +256,9 @@ export const lessonsData = {
     sections: {
       "Viewing the Menu": {
         text: [
-          "메뉴 좀 볼 수 있을까요? (Menu jom bol su isseulkkayo?) - Can I see the menu, please? [me.nju dʑom bol su i.sɯl.k͈a.jo]",
-          "뭐를 추천하시나요? (Mweoreul chucheonhashinayo?) - What do you recommend? [mwʌ.ɾɯl tɕʰu.tɕʰʌn.ha.ɕi.na.jo]",
-          "오늘의 추천 요리가 있나요? (Oneureui chucheon yoriga innayo?) - Do you have any specials today? [o.nɯ.ɾe.ɰi tɕʰu.tɕʰʌn jo.ɾi.ga in.na.jo]"
+          "메뉴 좀 볼 수 있을까요? (Menu jom bol su isseulkkayo?) - Can I see the menu, please? ",
+          "뭐를 추천하시나요? (Mweoreul chucheonhashinayo?) - What do you recommend?",
+          "오늘의 추천 요리가 있나요? (Oneureui chucheon yoriga innayo?) - Do you have any specials today? "
         ],
         korean: [
           "메뉴 좀 볼 수 있을까요?",
@@ -292,11 +292,13 @@ export const lessonsData = {
     sections: {
       "Shopping Phrases": {
         text: [
-          "이거 얼마예요? (Igeo eolmayeyo?) - How much is this? [i.gʌ ʌl.ma.je.jo]",
-          "좀 깎아주세요 (Jom kakkajuseyo) - Please give me a discount. [tɕom kak.kʰa.dʑu.se.jo]",
-          "더 주세요 (Deo juseyo) - Please add more. [tʌ dʑu.se.jo]"
+          "이거 었어요? (Igeo itsseoyo?) - Do you have this?",  
+          "이거 얼마예요? (Igeo eolmayeyo?) - How much is this?",
+          "좀 깎아주세요 (Jom kakkajuseyo) - Please give me a discount.",
+          "더 주세요 (Deo juseyo) - Please add more."
         ],
         korean: [
+          "이거 었어요",  
           "이거 얼마예요",
           "좀 깎아주세요",
           "더 주세요"
@@ -304,7 +306,7 @@ export const lessonsData = {
       },
       "Key Terms": {
         text: [
-          "가격 (Gagyeok) - Price. [ka.gjʌk]",
+          "가격 (Gagyeok) - Price.",
           "세일 (Seil) - Sale. [se.il]"
         ],
         korean: [
@@ -387,28 +389,28 @@ export const lessonsData = {
       "Basic Family Terms": {
         text: [
           "Family Members:",
-          "아버지 (Abeoji) = Father",
-          "어머니 (Eomeoni) = Mother",
-          "형 (Hyeong) = Older brother (for males)",
-          "오빠 (Oppa) = Older brother (for females)",
-          "누나 (Nuna) = Older sister (for males)",
-          "언니 (Unni) = Older sister (for females)",
-          "동생 (Dongsaeng) = Younger sibling (for both genders)",
-          "할아버지 (Halabeoji) = Grandfather",
-          "할머니 (Halmeoni) = Grandmother",
-          "아들 (Adeul) = Son",
-          "딸 (Ttal) = Daughter"
+          "아버지 (Abeoji) - Father",
+          "어머니 (Eomeoni) - Mother",
+          "형 (Hyeong) - Older brother (for males)",
+          "오빠 (Oppa) - Older brother (for females)",
+          "누나 (Nuna) - Older sister (for males)",
+          "언니 (Unni) - Older sister (for females)",
+          "동생 (Dongsaeng) - Younger sibling (for both genders)",
+          "할아버지 (Halabeoji) - Grandfather",
+          "할머니 (Halmeoni) - Grandmother",
+          "아들 (Adeul) - Son",
+          "딸 (Ttal) - Daughter"
         ],
         korean: ["", "아버지", "어머니", "형", "오빠", "누나", "언니", "동생", "할아버지", "할머니", "아들", "딸"]
       },
       "Extended Family Terms": {
         text: [
-          "삼촌 (Samchon) = Uncle (father’s side)",
-          "고모 (Gomo) = Aunt (father’s side)",
-          "이모 (Imo) = Aunt (mother’s side)",
-          "외삼촌 (Woesamchon) = Uncle (mother’s side)",
-          "조카 (Joka) = Nephew/Niece",
-          "사촌 (Sachon) = Cousin"
+          "삼촌 (Samchon) - Uncle (father’s side)",
+          "고모 (Gomo) - Aunt (father’s side)",
+          "이모 (Imo) - Aunt (mother’s side)",
+          "외삼촌 (Woesamchon) - Uncle (mother’s side)",
+          "조카 (Joka) - Nephew/Niece",
+          "사촌 (Sachon) - Cousin"
         ],
         korean: ["삼촌", "고모", "이모", "외삼촌", "조카", "사촌"]
       },
@@ -423,8 +425,8 @@ export const lessonsData = {
       },
       "Questions and Answers": {
         text: [
-          "Q: 당신의 가족은 몇 명이에요? (How many people are in your family?)\nA: 저희 가족은 네 명이에요. (My family has four people.)\nJeo-hui ga-jok-eun ne myeong-i-e-yo.",
-          "Q: 형제/자매가 있어요? (Do you have any siblings?)\nA: 네, 저는 동생이 있어요. (Yes, I have a younger sibling.)\nNe, jeo-neun dong-saeng-i it-seo-yo."
+          "Q: 당신의 가족은 몇 명이에요? (How many people are in your family?) Dang-shin-ui ga-jok-eun myeot myeong-i-e-yo?.\nA: 저희 가족은 네 명이에요. (My family has four people.)\nJeo-hui ga-jok-eun ne myeong-i-e-yo.",
+          "Q: 형제/자매가 있어요? (Do you have any siblings?) Hyeong-je/ja-mae-ga it-seo-yo?\nA: 네, 저는 동생이 있어요. (Yes, I have a younger sibling.)\nNe, jeo-neun dong-saeng-i it-seo-yo."
         ],
         korean: ["당신의 가족은 몇 명이에요?", "저희 가족은 네 명이에요.", "형제/자매가 있어요?", "네, 저는 동생이 있어요."]
       }
@@ -434,17 +436,17 @@ export const lessonsData = {
     sections: {
       "List of Colors": {
         text: [
-          "빨간색 (Ppal-gan-saek) = Red",
-          "파란색 (Pa-ran-saek) = Blue",
-          "노란색 (No-ran-saek) = Yellow",
-          "초록색 (Cho-rok-saek) = Green",
-          "검정색 (Geom-jeong-saek) = Black",
-          "흰색 (Huin-saek) = White",
-          "주황색 (Ju-hwang-saek) = Orange",
-          "분홍색 (Bun-hong-saek) = Pink",
-          "보라색 (Bo-ra-saek) = Purple",
-          "갈색 (Gal-saek) = Brown",
-          "회색 (Hoe-saek) = Gray"
+          "빨간색 (Ppal-gan-saek) - Red",
+          "파란색 (Pa-ran-saek) - Blue",
+          "노란색 (No-ran-saek) - Yellow",
+          "초록색 (Cho-rok-saek) - Green",
+          "검정색 (Geom-jeong-saek) - Black",
+          "흰색 (Huin-saek) - White",
+          "주황색 (Ju-hwang-saek) - Orange",
+          "분홍색 (Bun-hong-saek) - Pink",
+          "보라색 (Bo-ra-saek) - Purple",
+          "갈색 (Gal-saek) - Brown",
+          "회색 (Hoe-saek) - Gray"
         ],
         korean: [
           "빨간색",
@@ -478,9 +480,9 @@ export const lessonsData = {
       },
       "Questions and Answers Related to Colors": {
         text: [
-          "Q: 가장 좋아하는 색깔은 무엇이에요? (What is your favorite color?)\nA: 저는 파란색을 좋아해요. (I like blue.)",
-          "Q: 이건 무슨 색이에요? (What color is this?)\nA: 이건 빨간색이에요. (This is red.)",
-          "Q: 이 옷은 무슨 색이에요? (What color is this shirt?)\nA: 이 옷은 흰색이에요. (This shirt is white.)"
+          "Q: 가장 좋아하는 색깔은 무엇이에요? (What is your favorite color?) Ga-jang jo-a-ha-neun saek-kkal-eun mu-eo-s-i-e-yo?\nA: 저는 파란색을 좋아해요. (I like blue.) Jeo-neun pa-ran-saek-eul jo-a-hae-yo.",
+          "Q: 이건 무슨 색이에요? (What color is this?) I-geon mu-seun saek-i-e-yo?\nA: 이건 빨간색이에요. (This is red.) I-geon ppal-gan-saek-i-e-yo.",
+          "Q: 이 옷은 무슨 색이에요? (What color is this shirt?) I ot-eun mu-seun saek-i-e-yo?\nA: 이 옷은 흰색이에요. (This shirt is white.) I ot-eun huin-saek-i-e-yo."
         ],
         korean: [
           "가장 좋아하는 색깔은 무엇이에요?\n저는 파란색을 좋아해요.",
