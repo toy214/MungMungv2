@@ -19,10 +19,11 @@ export default function QuizScreen() {
       const sections = lessonsData[lessonKey].sections;
       Object.keys(sections).forEach((sectionKey) => {
         const section = sections[sectionKey];
+
         if (section.korean && section.text) {
           section.korean.forEach((word, index) => {
             const englishText = section.text[index];
-            if (word && englishText) {
+            if (isValidQuestion(word, englishText)) {
               const splitText = englishText.split('=');
               if (splitText.length > 1) {
                 const correctAnswer = splitText[1].trim();
@@ -40,21 +41,32 @@ export default function QuizScreen() {
         if (section.text && section.korean) {
           section.text.forEach((text, index) => {
             const koreanWord = section.korean[index];
-            const splitText = text.split('=');
-            if (splitText.length > 1 && koreanWord) {
-              const correctAnswer = koreanWord;
-              questionsArray.push({
-                type: 'englishToKorean',
-                question: `What is the Korean translation of "${splitText[0].trim()}"?`,
-                options: generateOptions(correctAnswer, section.korean),
-                correctAnswer: correctAnswer,
-              });
+            if (isValidQuestion(koreanWord, text)) {
+              const splitText = text.split('=');
+              if (splitText.length > 1) {
+                const correctAnswer = koreanWord;
+                questionsArray.push({
+                  type: 'englishToKorean',
+                  question: `What is the Korean translation of "${splitText[0].trim()}"?`,
+                  options: generateOptions(correctAnswer, section.korean),
+                  correctAnswer: correctAnswer,
+                });
+              }
             }
           });
         }
       });
     });
+
     setQuestions(shuffleArray(questionsArray));
+  };
+
+  const isValidQuestion = (word, text) => {
+    // Check if the entry is valid (not a title, placeholder, or embedded answer)
+    if (!word || !text) return false; // Skip empty or missing entries
+    if (word.trim() === '' || text.trim() === '') return false; // Skip empty strings
+    if (text.includes(word)) return false; // Skip if the answer is embedded in the question
+    return true;
   };
 
   const generateOptions = (correctAnswer, allPossibleAnswers) => {
