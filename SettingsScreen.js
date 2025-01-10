@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
-import { View, Text, StyleSheet, Switch, TouchableOpacity, Picker } from 'react-native';
+import { View, Text, StyleSheet, Switch, TouchableOpacity } from 'react-native';
+import { Picker } from '@react-native-picker/picker';
 import * as Speech from 'expo-speech';
 
 export default function SettingsScreen() {
@@ -50,7 +51,7 @@ export default function SettingsScreen() {
         <Text style={textStyle}>Voice Gender</Text>
         <Picker
           selectedValue={voiceGender}
-          style={[styles.picker, textStyle]}
+          style={styles.picker}
           onValueChange={(itemValue) => setVoiceGender(itemValue)}
         >
           <Picker.Item label="Male" value="Male" />
@@ -92,5 +93,6 @@ const styles = StyleSheet.create({
   picker: {
     height: 50,
     flex: 1,
+    color: '#000', // Adjust text color
   },
 });
