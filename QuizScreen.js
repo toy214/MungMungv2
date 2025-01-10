@@ -12,7 +12,6 @@ export default function QuizScreen() {
     generateQuizQuestions();
   }, []);
 
-  // Generate questions dynamically from lessonsData
   const generateQuizQuestions = () => {
     const questionsArray = [];
 
@@ -22,42 +21,45 @@ export default function QuizScreen() {
         const section = sections[sectionKey];
 
         // Add Korean -> English questions
-        if (section.korean && section.korean.length > 0) {
+        if (section.korean && section.text) {
           section.korean.forEach((word, index) => {
-            if (word && section.text[index]) {
-              questionsArray.push({
-                type: 'koreanToEnglish',
-                question: `What is the meaning of "${word}"?`,
-                options: shuffleArray([
-                  section.text[index].split('=')[1].trim(),
-                  'Meaning A',
-                  'Meaning B',
-                  'Meaning C',
-                ]),
-                correctAnswer: section.text[index].split('=')[1].trim(),
-              });
+            const englishText = section.text[index];
+            if (word && englishText) {
+              const splitText = englishText.split('=');
+              if (splitText.length > 1) {
+                questionsArray.push({
+                  type: 'koreanToEnglish',
+                  question: `What is the meaning of "${word}"?`,
+                  options: shuffleArray([
+                    splitText[1].trim(),
+                    'Meaning A',
+                    'Meaning B',
+                    'Meaning C',
+                  ]),
+                  correctAnswer: splitText[1].trim(),
+                });
+              }
             }
           });
         }
 
         // Add English -> Korean questions
-        if (section.text && section.text.length > 0) {
+        if (section.text && section.korean) {
           section.text.forEach((text, index) => {
-            if (section.korean && section.korean[index]) {
-              const splitText = text.split('=');
-              if (splitText.length > 1) {
-                questionsArray.push({
-                  type: 'englishToKorean',
-                  question: `What is the Korean translation of "${splitText[0].trim()}"?`,
-                  options: shuffleArray([
-                    section.korean[index],
-                    'Option A',
-                    'Option B',
-                    'Option C',
-                  ]),
-                  correctAnswer: section.korean[index],
-                });
-              }
+            const koreanWord = section.korean[index];
+            const splitText = text.split('=');
+            if (splitText.length > 1 && koreanWord) {
+              questionsArray.push({
+                type: 'englishToKorean',
+                question: `What is the Korean translation of "${splitText[0].trim()}"?`,
+                options: shuffleArray([
+                  koreanWord,
+                  'Option A',
+                  'Option B',
+                  'Option C',
+                ]),
+                correctAnswer: koreanWord,
+              });
             }
           });
         }
@@ -67,12 +69,8 @@ export default function QuizScreen() {
     setQuestions(questionsArray);
   };
 
-  // Shuffle array utility
-  const shuffleArray = (array) => {
-    return array.sort(() => Math.random() - 0.5);
-  };
+  const shuffleArray = (array) => array.sort(() => Math.random() - 0.5);
 
-  // Handle answer selection
   const handleAnswer = (selectedAnswer) => {
     if (selectedAnswer === questions[currentQuestionIndex].correctAnswer) {
       setScore(score + 1);
@@ -80,7 +78,6 @@ export default function QuizScreen() {
     setShowAnswer(true);
   };
 
-  // Move to next question
   const nextQuestion = () => {
     setShowAnswer(false);
     setCurrentQuestionIndex(currentQuestionIndex + 1);
@@ -183,9 +180,4 @@ const styles = StyleSheet.create({
     fontWeight: 'bold',
   },
   score: {
-    fontSize: 20,
-    fontWeight: 'bold',
-    marginTop: 20,
-    textAlign: 'center',
-  },
-});
+   
