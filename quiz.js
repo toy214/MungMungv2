@@ -15,7 +15,11 @@ function generateQuizData(lessons) {
         section.korean.forEach((word, index) => {
           const text = section.text[index];
 
-          // Ensure both word and text are valid
+          if (!word || !text) {
+            console.log(`Skipping invalid entry in section "${sectionKey}":`, { word, text });
+            return; // Skip invalid entries
+          }
+
           if (isValidQuestion(word, text)) {
             const splitText = text.split('=');
             if (splitText.length > 1) {
@@ -26,13 +30,21 @@ function generateQuizData(lessons) {
               };
               quizQuestions.push(question);
             }
+          } else {
+            console.log(`Skipped question due to validation:`, { word, text });
           }
         });
+      } else {
+        console.log(`Skipping section "${sectionKey}" with no valid korean or text.`);
       }
     });
   });
 
-  // Generate options for each question
+  if (quizQuestions.length === 0) {
+    console.log('No valid questions found. Falling back to default questions.');
+    return generateFallbackData();
+  }
+
   return quizQuestions.map((question, _, allQuestions) => {
     const distractors = getDistractors(question.correctAnswer, allQuestions);
     return {
@@ -43,8 +55,8 @@ function generateQuizData(lessons) {
 }
 
 function isValidQuestion(word, text) {
-  if (!word || !text) return false;
-  if (word.trim() === '' || text.trim() === '') return false;
+  if (!word || !text) return false; // Skip empty or missing entries
+  if (word.trim() === '' || text.trim() === '') return false; // Skip empty strings
   if (text.includes(word)) return false; // Skip embedded answers
   return true;
 }
@@ -57,4 +69,19 @@ function getDistractors(correctAnswer, allQuestions) {
 
 function shuffleArray(array) {
   return array.sort(() => Math.random() - 0.5);
+}
+
+function generateFallbackData() {
+  return [
+    {
+      question: 'What is the meaning of "안녕하세요"?',
+      correctAnswer: 'Hello',
+      options: shuffleArray(['Hello', 'Goodbye', 'Thank you', 'Excuse me']),
+    },
+    {
+      question: 'What is the meaning of "감사합니다"?',
+      correctAnswer: 'Thank you',
+      options: shuffleArray(['Thank you', 'Hello', 'Goodbye', 'Excuse me']),
+    },
+  ];
 }
