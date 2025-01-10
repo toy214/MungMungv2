@@ -1,81 +1,14 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { View, Text, StyleSheet, TouchableOpacity, FlatList } from 'react-native';
-import { lessonsData } from './lessons';
+import { quizData } from './quiz';
 
 export default function QuizScreen() {
-  const [questions, setQuestions] = useState([]);
   const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
   const [score, setScore] = useState(0);
   const [showAnswer, setShowAnswer] = useState(false);
   const [selectedAnswer, setSelectedAnswer] = useState('');
-  const [error, setError] = useState(false); // Track if there's an error
 
-  useEffect(() => {
-    try {
-      generateQuizQuestions(10); // Generate 10 questions
-    } catch (e) {
-      console.error('Error generating quiz questions:', e);
-      setError(true);
-    }
-  }, []);
-
-  const generateQuizQuestions = (limit) => {
-    const flatData = [];
-    console.log('Starting question generation...');
-
-    // Flatten lessonsData into a single list of question candidates
-    Object.keys(lessonsData).forEach((lessonKey) => {
-      const sections = lessonsData[lessonKey].sections;
-      Object.keys(sections).forEach((sectionKey) => {
-        const section = sections[sectionKey];
-        if (section.korean && section.text) {
-          section.korean.forEach((word, index) => {
-            const text = section.text[index];
-            if (isValidQuestion(word, text)) {
-              const splitText = text.split('=');
-              if (splitText.length > 1) {
-                flatData.push({
-                  type: 'koreanToEnglish',
-                  word: word.trim(),
-                  english: splitText[1].trim(),
-                });
-              }
-            }
-          });
-        }
-      });
-    });
-
-    console.log(`Valid questions found: ${flatData.length}`);
-    if (flatData.length === 0) throw new Error('No valid questions found.');
-
-    // Shuffle and limit questions
-    const selectedData = shuffleArray(flatData).slice(0, limit);
-
-    // Generate questions
-    const questionsArray = selectedData.map((item) => ({
-      question: `What is the meaning of "${item.word}"?`,
-      options: generateOptions(item.english, flatData.map((d) => d.english)),
-      correctAnswer: item.english,
-    }));
-
-    setQuestions(questionsArray);
-  };
-
-  const isValidQuestion = (word, text) => {
-    if (!word || !text) return false; // Skip empty or missing entries
-    if (word.trim() === '' || text.trim() === '') return false; // Skip empty strings
-    if (text.includes(word)) return false; // Skip embedded answers
-    return true;
-  };
-
-  const generateOptions = (correctAnswer, allPossibleAnswers) => {
-    const filteredAnswers = allPossibleAnswers.filter((answer) => answer && answer !== correctAnswer);
-    const randomAnswers = shuffleArray(filteredAnswers).slice(0, 3);
-    return shuffleArray([correctAnswer, ...randomAnswers]);
-  };
-
-  const shuffleArray = (array) => array.sort(() => Math.random() - 0.5);
+  const questions = quizData;
 
   const handleAnswer = (selectedAnswer) => {
     setSelectedAnswer(selectedAnswer);
@@ -91,19 +24,10 @@ export default function QuizScreen() {
     setCurrentQuestionIndex(currentQuestionIndex + 1);
   };
 
-  if (error) {
-    return (
-      <View style={styles.container}>
-        <Text style={styles.title}>Error</Text>
-        <Text style={styles.errorText}>Unable to generate quiz questions. Please check the lessons data.</Text>
-      </View>
-    );
-  }
-
   if (questions.length === 0) {
     return (
       <View style={styles.container}>
-        <Text style={styles.title}>Loading Quiz...</Text>
+        <Text style={styles.title}>No Quiz Data Found</Text>
       </View>
     );
   }
@@ -162,11 +86,6 @@ const styles = StyleSheet.create({
     fontSize: 24,
     fontWeight: 'bold',
     marginBottom: 20,
-    textAlign: 'center',
-  },
-  errorText: {
-    fontSize: 16,
-    color: 'red',
     textAlign: 'center',
   },
   question: {
