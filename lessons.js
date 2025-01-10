@@ -243,10 +243,10 @@ export const lessonsData = {
       },
       "Practice": {
         text: [
-          "1. 지금 몇 시예요? (What time is it now?) Ji-geum myeot si-ye-yo?",
-          "2. 지금 다섯 시 삼십 분이에요. (It’s 5:30 now.) Ji-geum da-seot si sam-sip bun-i-e-yo.",
-          "3. 버스는 몇 시에 도착해요? (What time does the bus arrive?) Beo-seu-neun myeot si-e do-chak-hae-yo?",
-          "4. 버스는 오후 네 시 오 분에 도착해요. (The bus arrives at 4:05 PM.) Beo-seu-neun o-hu ne si o bun-e do-chak-hae-yo."
+          "1. 지금 몇 시예요?\n(What time is it now?)\nJi-geum myeot si-ye-yo?",
+          "2. 지금 다섯 시 삼십 분이에요.\n(It’s 5:30 now.)\nJi-geum da-seot si sam-sip bun-i-e-yo.",
+          "3. 버스는 몇 시에 도착해요?\n(What time does the bus arrive?)\nBeo-seu-neun myeot si-e do-chak-hae-yo?",
+          "4. 버스는 오후 네 시 오 분에 도착해요.\n(The bus arrives at 4:05 PM.)\nBeo-seu-neun o-hu ne si o bun-e do-chak-hae-yo."
         ],
         korean: ["지금 몇 시예요?", "지금 다섯 시 삼십 분이에요.", "버스는 몇 시에 도착해요?", "버스는 오후 네 시 오 분에 도착해요."]
       }
@@ -256,9 +256,9 @@ export const lessonsData = {
     sections: {
       "Viewing the Menu": {
         text: [
-          "메뉴 좀 볼 수 있을까요? (Menu jom bol su isseulkkayo?) Can I see the menu, please? ",
-          "뭐를 추천하시나요? (Mweoreul chucheonhashinayo?) What do you recommend?",
-          "오늘의 추천 요리가 있나요? (Oneureui chucheon yoriga innayo?) Do you have any specials today? "
+          "메뉴 좀 볼 수 있을까요?\n(Menu jom bol su isseulkkayo?)\nCan I see the menu, please? ",
+          "뭐를 추천하시나요?\n(Mweoreul chucheonhashinayo?)\nWhat do you recommend?",
+          "오늘의 추천 요리가 있나요?\n(Oneureui chucheon yoriga innayo?)\nDo you have any specials today? "
         ],
         korean: [
           "메뉴 좀 볼 수 있을까요?",
@@ -268,9 +268,9 @@ export const lessonsData = {
       },
       "Placing Orders": {
         text: [
-          "김치찌개 주문할게요. (Kimchi jjigae jumunhalgeyo.) - I would like to order kimchi soup. [kim.tɕʰi tɕ͈i.gɛ dʑu.mun.hal.ge.jo]",
-          "음료수 좀 주시겠어요? (Eumryosu jom jushigesseoyo?) - Can I get a drink? [ɯm.ɾjo.su dʑom dʑu.ɕi.gɛ.s͈ʌ.jo]",
-          "불고기를 추가할 수 있을까요? (Bulgogireul chuga hal su isseulkkayo?) - Can we add bulgogi to our order? [pul.go.gi.ɾɯl tɕʰu.ga hal su i.sɯl.k͈a.jo]"
+          "김치찌개 주문할게요.\n (Kimchi jjigae jumunhalgeyo.)\nI would like to order kimchi soup. [kim.tɕʰi tɕ͈i.gɛ dʑu.mun.hal.ge.jo]",
+          "음료수 좀 주시겠어요?\n(Eumryosu jom jushigesseoyo?)\nCan I get a drink? [ɯm.ɾjo.su dʑom dʑu.ɕi.gɛ.s͈ʌ.jo]",
+          "불고기를 추가할 수 있을까요?\n(Bulgogireul chuga hal su isseulkkayo?)\nCan we add bulgogi to our order? [pul.go.gi.ɾɯl tɕʰu.ga hal su i.sɯl.k͈a.jo]"
         ],
         korean: [
           "김치찌개 주문할게요.",
@@ -330,10 +330,10 @@ export const lessonsData = {
   sections: {
     "At the Airport": {
       text: [
-        "비행기 표를 어디에서 사요? (Bi-haeng-gi pyo-reul eo-di-seo sa-yo?): Where can I buy a plane ticket?",
-        "탑승구는 어디에요? (Tap-seung-gu-neun eo-di-e-yo?): Where is the boarding gate?",
-        "짐을 어디에 찾을 수 있어요? (Jim-eul eo-di-e chat-eul su is-seo-yo?): Where can I pick up my luggage?",
-        "이 비행기는 몇 시에 출발해요? (I bi-haeng-gi-neun myeot si-e chul-bal-hae-yo?): What time does this flight depart?"
+        "비행기 표를 어디에서 사요?\n (Bi-haeng-gi pyo-reul eo-di-seo sa-yo?)\n Where can I buy a plane ticket?",
+        "탑승구는 어디에요?\n (Tap-seung-gu-neun eo-di-e-yo?)\n Where is the boarding gate?",
+        "짐을 어디에 찾을 수 있어요?\n (Jim-eul eo-di-e chat-eul su is-seo-yo?)\n Where can I pick up my luggage?",
+        "이 비행기는 몇 시에 출발해요?\n (I bi-haeng-gi-neun myeot si-e chul-bal-hae-yo?)\n What time does this flight depart?"
       ],
       korean: [
         "비행기 표를 어디에서 사요?",
@@ -344,10 +344,10 @@ export const lessonsData = {
     },
     "At the Hotel": {
       text: [
-        "체크인하고 싶어요. (Che-keu-in-ha-go si-peo-yo.): I want to check in.",
-        "체크아웃은 몇 시에요? (Che-keu-a-ut-eun myeot si-e-yo?): What time is check-out?",
-        "객실에 와이파이가 있나요? (Gaek-sil-e wa-i-pa-i-ga it-na-yo?): Is there Wi-Fi in the room?",
-        "이 호텔에 수영장이 있나요? (I ho-tel-e su-yeong-jang-i it-na-yo?): Does this hotel have a swimming pool?"
+        "체크인하고 싶어요.\n (Che-keu-in-ha-go si-peo-yo.)\n I want to check in.",
+        "체크아웃은 몇 시에요?\n (Che-keu-a-ut-eun myeot si-e-yo?)\n What time is check-out?",
+        "객실에 와이파이가 있나요?\n (Gaek-sil-e wa-i-pa-i-ga it-na-yo?)\n Is there Wi-Fi in the room?",
+        "이 호텔에 수영장이 있나요?\n (I ho-tel-e su-yeong-jang-i it-na-yo?)\n Does this hotel have a swimming pool?"
       ],
       korean: [
         "체크인하고 싶어요.",
@@ -358,10 +358,10 @@ export const lessonsData = {
     },
     "Asking for Directions": {
       text: [
-        "저기요, 이 근처에 쇼핑몰이 있나요? (Jeo-gi-yo, i geun-cheo-e syo-ping-mol-i it-na-yo?): Excuse me, is there a shopping mall around here?",
-        "저는 길을 잃었어요. 어떻게 가야 하나요? (Jeo-neun gil-eul ilh-eoss-eo-yo. Eotteoh-ke ga-ya ha-na-yo?): I’m lost. How do I get there?",
-        "이 길이 맞나요? (I gil-i mat-na-yo?): Is this the right way?",
-        "좌회전/우회전 해야 하나요? (Jwa-hoi-jeon/U-hoi-jeon hae-ya ha-na-yo?): Do I need to turn left/right?"
+        "저기요, 이 근처에 쇼핑몰이 있나요?\n (Jeo-gi-yo, i geun-cheo-e syo-ping-mol-i it-na-yo?)\n Excuse me, is there a shopping mall around here?",
+        "저는 길을 잃었어요. 어떻게 가야 하나요?\n (Jeo-neun gil-eul ilh-eoss-eo-yo. Eotteoh-ke ga-ya ha-na-yo?)\n I’m lost. How do I get there?",
+        "이 길이 맞나요?\n (I gil-i mat-na-yo?)\n Is this the right way?",
+        "좌회전/우회전 해야 하나요?\n (Jwa-hoi-jeon/U-hoi-jeon hae-ya ha-na-yo?)\n Do I need to turn left/right?"
       ],
       korean: [
         "저기요, 이 근처에 쇼핑몰이 있나요?",
@@ -372,10 +372,10 @@ export const lessonsData = {
     },
     "Using Public Transport": {
       text: [
-        "지하철역은 어디에요? (Ji-ha-cheol-yeok-eun eo-di-e-yo?): Where is the subway station?",
-        "이 버스는 어디로 가나요? (I beo-seu-neun eo-di-ro ga-na-yo?): Where does this bus go?",
-        "교통카드 충전은 어떻게 해요? (Gyo-tong-ka-deu chung-jeon-eun eotteoh-ke hae-yo?): How do I recharge my transportation card?",
-        "택시를 부를 수 있나요? (Taek-si-reul bu-reul su it-na-yo?): Can I call a taxi?"
+        "지하철역은 어디에요?\n (Ji-ha-cheol-yeok-eun eo-di-e-yo?)\n Where is the subway station?",
+        "이 버스는 어디로 가나요?\n (I beo-seu-neun eo-di-ro ga-na-yo?)\n Where does this bus go?",
+        "교통카드 충전은 어떻게 해요?\n (Gyo-tong-ka-deu chung-jeon-eun eotteoh-ke hae-yo?)\n How do I recharge my transportation card?",
+        "택시를 부를 수 있나요?\n (Taek-si-reul bu-reul su it-na-yo?)\n Can I call a taxi?"
       ],
       korean: [
         "지하철역은 어디에요?",
@@ -386,10 +386,10 @@ export const lessonsData = {
     },
     "Shopping": {
       text: [
-        "이거 얼마에요? (I-geo eol-ma-e-yo?): How much is this?",
-        "세일 있나요? (Se-il it-na-yo?): Is there a sale?",
-        "이거 다른 색깔 있어요? (I-geo da-reun saek-kkal it-na-yo?): Do you have this in another color?",
-        "영수증 주세요. (Yeong-su-jeung ju-se-yo.): Please give me the receipt."
+        "이거 얼마에요?\n (I-geo eol-ma-e-yo?)\n How much is this?",
+        "세일 있나요?\n (Se-il it-na-yo?)\n Is there a sale?",
+        "이거 다른 색깔 있어요?\n (I-geo da-reun saek-kkal it-na-yo?)\n Do you have this in another color?",
+        "영수증 주세요.\n (Yeong-su-jeung ju-se-yo.)\n Please give me the receipt."
       ],
       korean: [
         "이거 얼마에요?",
@@ -400,10 +400,10 @@ export const lessonsData = {
     },
     "Emergency Situations": {
       text: [
-        "도와주세요! (Do-wa-ju-se-yo!): Please help me!",
-        "병원 어디에요? (Byeong-won eo-di-e-yo?): Where is the hospital?",
-        "경찰서가 어디에요? (Gyeong-chal-seo-ga eo-di-e-yo?): Where is the police station?",
-        "저는 다쳤어요. (Jeo-neun da-chyeo-sseo-yo.): I’m hurt."
+        "도와주세요!\n (Do-wa-ju-se-yo!)\n Please help me!",
+        "병원 어디에요?\n (Byeong-won eo-di-e-yo?)\n Where is the hospital?",
+        "경찰서가 어디에요?\n (Gyeong-chal-seo-ga eo-di-e-yo?)\n Where is the police station?",
+        "저는 다쳤어요.\n (Jeo-neun da-chyeo-sseo-yo.)\n I’m hurt."
       ],
       korean: [
         "도와주세요!",
@@ -465,10 +465,10 @@ export const lessonsData = {
     },
     "Explaining Family Relationships": {
       text: [
-        "저는 아버지와 어머니가 계세요. (Jeo-neun a-beo-ji-wa eo-meo-ni-ga gye-se-yo.):\n I have a father and a mother.",
-        "형은 나보다 세 살 많아요. (Hyeong-eun na-bo-da se sal man-a-yo.):\n My older brother is three years older than me.",
-        "할아버지는 집 근처에 사세요. (Hal-a-beo-ji-neun jib geun-cheo-e sa-se-yo.):\n My grandfather lives near my house.",
-        "사촌과 함께 놀아요. (Sa-cho-n-gwa ham-kke no-ra-yo.):\n I play with my cousin."
+        "저는 아버지와 어머니가 계세요. \n(Jeo-neun a-beo-ji-wa eo-meo-ni-ga gye-se-yo.):\n I have a father and a mother.",
+        "형은 나보다 세 살 많아요. \n(Hyeong-eun na-bo-da se sal man-a-yo.):\n My older brother is three years older than me.",
+        "할아버지는 집 근처에 사세요. \n(Hal-a-beo-ji-neun jib geun-cheo-e sa-se-yo.):\n My grandfather lives near my house.",
+        "사촌과 함께 놀아요. \n(Sa-cho-n-gwa ham-kke no-ra-yo.):\n I play with my cousin."
       ],
       korean: [
         "저는 아버지와 어머니가 계세요.",
@@ -479,8 +479,8 @@ export const lessonsData = {
     },
     "Questions and Answers": {
       text: [
-        "Q: 당신의 가족은 몇 명이에요? (Dang-shin-ui ga-jok-eun myeot myeong-i-e-yo?): \nHow many people are in your family?\nA: 저희 가족은 네 명이에요. (Jeo-hui ga-jok-eun ne myeong-i-e-yo.): \nMy family has four people.",
-        "Q: 형제/자매가 있어요? (Hyeong-je/ja-mae-ga it-seo-yo?): \nDo you have any siblings?\nA: 네, 저는 동생이 있어요. (Ne, jeo-neun dong-saeng-i it-seo-yo.): \nYes, I have a younger sibling."
+        "Q: 당신의 가족은 몇 명이에요? \n(Dang-shin-ui ga-jok-eun myeot myeong-i-e-yo?): \nHow many people are in your family?\nA: 저희 가족은 네 명이에요. (Jeo-hui ga-jok-eun ne myeong-i-e-yo.): \nMy family has four people.",
+        "Q: 형제/자매가 있어요? \n(Hyeong-je/ja-mae-ga it-seo-yo?): \nDo you have any siblings?\nA: 네, 저는 동생이 있어요. (Ne, jeo-neun dong-saeng-i it-seo-yo.): \nYes, I have a younger sibling."
       ],
       korean: [
         "당신의 가족은 몇 명이에요? \n저희 가족은 네 명이에요.",
@@ -521,11 +521,11 @@ export const lessonsData = {
       },
       "Learning Expressions to Describe Colors": {
         text: [
-          "이것은 빨간색이에요. (I-geos-eun ppal-gan-saek-i-e-yo.):\n This is red.",
-          "그 차는 파란색이에요. (Geu cha-neun pa-ran-saek-i-e-yo.):\n That car is blue.",
-          "저는 초록색을 좋아해요. (Jeo-neun cho-rok-saek-eul jo-a-hae-yo.):\n I like green.",
-          "이 꽃은 노란색이에요. (I kkot-eun no-ran-saek-i-e-yo.):\n This flower is yellow.",
-          "이 신발은 검정색이에요. (I sin-bal-eun geom-jeong-saek-i-e-yo.):\n These shoes are black."
+          "이것은 빨간색이에요. \n(I-geos-eun ppal-gan-saek-i-e-yo.):\n This is red.",
+          "그 차는 파란색이에요. \n(Geu cha-neun pa-ran-saek-i-e-yo.):\n That car is blue.",
+          "저는 초록색을 좋아해요. \n(Jeo-neun cho-rok-saek-eul jo-a-hae-yo.):\n I like green.",
+          "이 꽃은 노란색이에요. \n(I kkot-eun no-ran-saek-i-e-yo.):\n This flower is yellow.",
+          "이 신발은 검정색이에요. \n(I sin-bal-eun geom-jeong-saek-i-e-yo.):\n These shoes are black."
          ],
         korean: [
           "이것은 빨간색이에요.",
@@ -537,9 +537,9 @@ export const lessonsData = {
     },
 "Questions and Answers Related to Colors": {
   text: [
-    "Q: 가장 좋아하는 색깔은 무엇이에요? (Ga-jang jo-a-ha-neun saek-kkal-eun mu-eo-s-i-e-yo?): \nWhat is your favorite color?\nA: 저는 파란색을 좋아해요. (Jeo-neun pa-ran-saek-eul jo-a-hae-yo.): \nI like blue.",
-    "Q: 이건 무슨 색이에요? (I-geon mu-seun saek-i-e-yo?): \nWhat color is this?\nA: 이건 빨간색이에요. (I-geon ppal-gan-saek-i-e-yo.): \nThis is red.",
-    "Q: 이 옷은 무슨 색이에요? (I ot-eun mu-seun saek-i-e-yo?): \nWhat color is this shirt?\nA: 이 옷은 흰색이에요. (I ot-eun huin-saek-i-e-yo.): \nThis shirt is white."
+    "Q: 가장 좋아하는 색깔은 무엇이에요? \n(Ga-jang jo-a-ha-neun saek-kkal-eun mu-eo-s-i-e-yo?): \nWhat is your favorite color?\nA: 저는 파란색을 좋아해요. (Jeo-neun pa-ran-saek-eul jo-a-hae-yo.): \nI like blue.",
+    "Q: 이건 무슨 색이에요? \n(I-geon mu-seun saek-i-e-yo?): \nWhat color is this?\nA: 이건 빨간색이에요. (I-geon ppal-gan-saek-i-e-yo.): \nThis is red.",
+    "Q: 이 옷은 무슨 색이에요? \n(I ot-eun mu-seun saek-i-e-yo?): \nWhat color is this shirt?\nA: 이 옷은 흰색이에요. (I ot-eun huin-saek-i-e-yo.): \nThis shirt is white."
   ],
   korean: [
     "가장 좋아하는 색깔은 무엇이에요?\n저는 파란색을 좋아해요.",
@@ -553,9 +553,9 @@ export const lessonsData = {
     sections: {
       "Finding a Place": {
         text: [
-          "저기요, 여기 근처에 [장소] 있어요? Jeo-gi-yo, yeo-gi geun-cheo-e [jang-so] it-sseo-yo?\n(Excuse me, is there a [place] nearby?)",
-          "이 근처에 화장실이 어디에 있어요?I geun-cheo-e hwa-jang-sil-i eo-di-e it-sseo-yo?\n(Where is the restroom near here?)",
-          "...까지 어떻게 가요? [...] kkaji eo-tteo-ke ga-yo?\n(How can I get to...?)"
+          "저기요, 여기 근처에 [장소] 있어요? \nJeo-gi-yo, yeo-gi geun-cheo-e [jang-so] it-sseo-yo?\n(Excuse me, is there a [place] nearby?)",
+          "이 근처에 화장실이 어디에 있어요?I \ngeun-cheo-e hwa-jang-sil-i eo-di-e it-sseo-yo?\n(Where is the restroom near here?)",
+          "...까지 어떻게 가요? [...] \nkkaji eo-tteo-ke ga-yo?\n(How can I get to...?)"
         ],
         korean: [
           "저기요, 여기 근처에 [장소] 있어요?",
@@ -565,9 +565,9 @@ export const lessonsData = {
       },
       "Asking for Directions": {
         text: [
-          "오른쪽/왼쪽으로 가야 해요? O-reun-jjok/wen-jjok-eu-ro ga-ya hae-yo?\n(Should I go right/left?)",
-          "이 길로 곧장 가면 돼요? I gil-lo got-jang ga-myeon dwae-yo?\n(Can I go straight on this road?)",
-          "멀어요? 가까워요? Meo-reo-yo? Ga-kka-wo-yo?\n(Is it far? Is it close?)"
+          "오른쪽/왼쪽으로 가야 해요? \nO-reun-jjok/wen-jjok-eu-ro ga-ya hae-yo?\n(Should I go right/left?)",
+          "이 길로 곧장 가면 돼요? \nI gil-lo got-jang ga-myeon dwae-yo?\n(Can I go straight on this road?)",
+          "멀어요? 가까워요? \nMeo-reo-yo? Ga-kka-wo-yo?\n(Is it far? Is it close?)"
         ],
         korean: [
           "오른쪽/왼쪽으로 가야 해요?",
@@ -577,9 +577,9 @@ export const lessonsData = {
       },
       "Asking About Transportation": {
         text: [
-          "여기에서 [지하철역/버스정류장] 어떻게 가요? Yeo-gi-e-seo [ji-ha-cheol-yeok/beo-seu-jeong-ryu-jang] eo-tteo-ke ga-yo?\n(How do I get to [the subway station/bus stop] from here?)",
-          "택시 타는 곳은 어디에 있어요? Taek-si ta-neun go-seun eo-di-e it-sseo-yo?\n(Where can I catch a taxi?)",
-          "몇 번 버스를 타야 해요? Myeot beon beo-seu-reul ta-ya hae-yo?\n(Which bus should I take?)"
+          "여기에서 [지하철역/버스정류장] 어떻게 가요?\n Yeo-gi-e-seo [ji-ha-cheol-yeok/beo-seu-jeong-ryu-jang] eo-tteo-ke ga-yo?\n(How do I get to [the subway station/bus stop] from here?)",
+          "택시 타는 곳은 어디에 있어요?\n Taek-si ta-neun go-seun eo-di-e it-sseo-yo?\n(Where can I catch a taxi?)",
+          "몇 번 버스를 타야 해요?\n Myeot beon beo-seu-reul ta-ya hae-yo?\n(Which bus should I take?)"
         ],
         korean: [
           "여기에서 [지하철역/버스정류장] 어떻게 가요?",
@@ -590,11 +590,11 @@ export const lessonsData = {
       "Example Conversations": {
         text: [
           "(1) Finding a place:",
-          "손님: 저기요, 여기 근처에 편의점 있어요? Jeo-gi-yo, yeo-gi geun-cheo-e pyeo-ui-jeom it-sseo-yo?\n(Excuse me, is there a convenience store nearby?)\n직원: 네, 이 길로 쭉 가면 오른쪽에 있어요. Ne, i gil-lo jjok ga-myeon o-reun-jjok-e it-sseo-yo.\n(Yes, if you go straight on this road, it’s on your right.)",
+          "손님: 저기요, 여기 근처에 편의점 있어요?\n Jeo-gi-yo, yeo-gi geun-cheo-e pyeo-ui-jeom it-sseo-yo?\n(Excuse me, is there a convenience store nearby?)\n직원: 네, 이 길로 쭉 가면 오른쪽에 있어요. Ne, i gil-lo jjok ga-myeon o-reun-jjok-e it-sseo-yo.\n(Yes, if you go straight on this road, it’s on your right.)",
           "(2) Asking for directions:",
-          "손님: 은행까지 어떻게 가요? Eun-haeng-kkaji eo-tteo-ke ga-yo?\n(How can I get to the bank?)\n직원: 여기서 왼쪽으로 도세요. 그다음 두 블록 지나면 은행이 보일 거예요. Yeo-gi-seo wen-jjok-eu-ro do-se-yo. Geu-da-eum du beul-lok ji-na-myeon eun-haeng-i bo-il geo-ye-yo.\n(Turn left here. After two blocks, you’ll see the bank.)",
+          "손님: 은행까지 어떻게 가요?\n Eun-haeng-kkaji eo-tteo-ke ga-yo?\n(How can I get to the bank?)\n직원: 여기서 왼쪽으로 도세요. 그다음 두 블록 지나면 은행이 보일 거예요. Yeo-gi-seo wen-jjok-eu-ro do-se-yo. Geu-da-eum du beul-lok ji-na-myeon eun-haeng-i bo-il geo-ye-yo.\n(Turn left here. After two blocks, you’ll see the bank.)",
           "(3) Asking about transportation:",
-          "손님: 버스 정류장은 어디에 있어요? Son-nim: Beo-seu jeong-ryu-jang-eun eo-di-e it-sseo-yo?\n(Where is the bus stop?)\n직원: 이 길 끝에 있어요. I gil kkeut-e it-sseo-yo.\n(It’s at the end of this street.)"
+          "손님: 버스 정류장은 어디에 있어요?\n Son-nim: Beo-seu jeong-ryu-jang-eun eo-di-e it-sseo-yo?\n(Where is the bus stop?)\n직원: 이 길 끝에 있어요. I gil kkeut-e it-sseo-yo.\n(It’s at the end of this street.)"
         ],
         korean: [
           "",
