@@ -1,41 +1,61 @@
 import React, { useState } from 'react';
-import { View, Text, StyleSheet, Switch, Button, TouchableOpacity } from 'react-native';
+import { View, Text, StyleSheet, Switch, TouchableOpacity, Picker } from 'react-native';
+import * as Speech from 'expo-speech';
 
 export default function SettingsScreen() {
   const [notificationsEnabled, setNotificationsEnabled] = useState(false);
   const [darkModeEnabled, setDarkModeEnabled] = useState(false);
   const [language, setLanguage] = useState('English');
+  const [voiceGender, setVoiceGender] = useState('Male');
 
   const toggleNotifications = () => setNotificationsEnabled(!notificationsEnabled);
   const toggleDarkMode = () => setDarkModeEnabled(!darkModeEnabled);
   const changeLanguage = () => {
     setLanguage(language === 'English' ? 'Korean' : 'English');
+    Speech.speak(`Language set to ${language === 'English' ? 'Korean' : 'English'}`, {
+      voice: voiceGender === 'Male' ? 'com.apple.ttsbundle.Daniel-compact' : 'com.apple.ttsbundle.Samantha-compact',
+    });
   };
 
+  const containerStyle = darkModeEnabled
+    ? [styles.container, { backgroundColor: '#333' }]
+    : [styles.container, { backgroundColor: '#FFF' }];
+
+  const textStyle = darkModeEnabled
+    ? { color: '#FFF' }
+    : { color: '#000' };
+
   return (
-    <View style={styles.container}>
-      <Text style={styles.title}>Settings</Text>
+    <View style={containerStyle}>
+      <Text style={[styles.title, textStyle]}>Settings</Text>
       {/* Notifications */}
       <View style={styles.settingRow}>
-        <Text>Enable Notifications</Text>
+        <Text style={textStyle}>Enable Notifications</Text>
         <Switch value={notificationsEnabled} onValueChange={toggleNotifications} />
       </View>
       {/* Dark Mode */}
       <View style={styles.settingRow}>
-        <Text>Enable Dark Mode</Text>
+        <Text style={textStyle}>Enable Dark Mode</Text>
         <Switch value={darkModeEnabled} onValueChange={toggleDarkMode} />
       </View>
       {/* Language Preference */}
       <View style={styles.settingRow}>
-        <Text>Language</Text>
+        <Text style={textStyle}>Language</Text>
         <TouchableOpacity style={styles.languageButton} onPress={changeLanguage}>
           <Text style={styles.languageText}>{language}</Text>
         </TouchableOpacity>
       </View>
-      {/* Account Actions */}
-      <View style={styles.accountActions}>
-        <Button title="Change Password" onPress={() => alert('Change Password')} />
-        <Button title="Log Out" onPress={() => alert('Logged Out')} color="#FF5722" />
+      {/* Voice Gender Preference */}
+      <View style={styles.settingRow}>
+        <Text style={textStyle}>Voice Gender</Text>
+        <Picker
+          selectedValue={voiceGender}
+          style={[styles.picker, textStyle]}
+          onValueChange={(itemValue) => setVoiceGender(itemValue)}
+        >
+          <Picker.Item label="Male" value="Male" />
+          <Picker.Item label="Female" value="Female" />
+        </Picker>
       </View>
     </View>
   );
@@ -45,7 +65,6 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     padding: 20,
-    backgroundColor: '#FFF',
   },
   title: {
     fontSize: 24,
@@ -70,7 +89,8 @@ const styles = StyleSheet.create({
     color: '#FFF',
     fontWeight: 'bold',
   },
-  accountActions: {
-    marginTop: 30,
+  picker: {
+    height: 50,
+    flex: 1,
   },
 });
