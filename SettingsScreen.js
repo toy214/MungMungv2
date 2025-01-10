@@ -1,23 +1,37 @@
 import React, { useState } from 'react';
 import { View, Text, StyleSheet } from 'react-native';
-import { Picker } from '@react-native-picker/picker'; // Updated import
+import { Picker } from '@react-native-picker/picker'; // Correct Picker import
 
 export default function SettingsScreen() {
-  const [language, setLanguage] = useState('English');
+  const [textSize, setTextSize] = useState('Medium');
+  const [voiceGender, setVoiceGender] = useState('Male');
 
   return (
     <View style={styles.container}>
       <Text style={styles.title}>Settings</Text>
+      {/* Text Size Adjustment */}
       <View style={styles.settingRow}>
-        <Text style={styles.settingLabel}>Learning Language</Text>
+        <Text style={styles.settingLabel}>Text Size</Text>
         <Picker
-          selectedValue={language}
+          selectedValue={textSize}
           style={styles.picker}
-          onValueChange={(value) => setLanguage(value)}
+          onValueChange={(value) => setTextSize(value)}
         >
-          <Picker.Item label="English" value="English" />
-          <Picker.Item label="Spanish" value="Spanish" />
-          <Picker.Item label="French" value="French" />
+          <Picker.Item label="Small" value="Small" />
+          <Picker.Item label="Medium" value="Medium" />
+          <Picker.Item label="Large" value="Large" />
+        </Picker>
+      </View>
+      {/* Pronunciation Voice */}
+      <View style={styles.settingRow}>
+        <Text style={styles.settingLabel}>Voice Gender</Text>
+        <Picker
+          selectedValue={voiceGender}
+          style={styles.picker}
+          onValueChange={(value) => setVoiceGender(value)}
+        >
+          <Picker.Item label="Male" value="Male" />
+          <Picker.Item label="Female" value="Female" />
         </Picker>
       </View>
     </View>
