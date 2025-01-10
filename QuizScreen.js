@@ -20,45 +20,35 @@ export default function QuizScreen() {
       Object.keys(sections).forEach((sectionKey) => {
         const section = sections[sectionKey];
 
-        // Add Korean -> English questions
         if (section.korean && section.text) {
           section.korean.forEach((word, index) => {
             const englishText = section.text[index];
             if (word && englishText) {
               const splitText = englishText.split('=');
               if (splitText.length > 1) {
+                const correctAnswer = splitText[1].trim();
                 questionsArray.push({
                   type: 'koreanToEnglish',
                   question: `What is the meaning of "${word}"?`,
-                  options: shuffleArray([
-                    splitText[1].trim(),
-                    'Meaning A',
-                    'Meaning B',
-                    'Meaning C',
-                  ]),
-                  correctAnswer: splitText[1].trim(),
+                  options: generateOptions(correctAnswer, section.text.map((t) => t.split('=')[1]?.trim())),
+                  correctAnswer: correctAnswer,
                 });
               }
             }
           });
         }
 
-        // Add English -> Korean questions
         if (section.text && section.korean) {
           section.text.forEach((text, index) => {
             const koreanWord = section.korean[index];
             const splitText = text.split('=');
             if (splitText.length > 1 && koreanWord) {
+              const correctAnswer = koreanWord;
               questionsArray.push({
                 type: 'englishToKorean',
                 question: `What is the Korean translation of "${splitText[0].trim()}"?`,
-                options: shuffleArray([
-                  koreanWord,
-                  'Option A',
-                  'Option B',
-                  'Option C',
-                ]),
-                correctAnswer: koreanWord,
+                options: generateOptions(correctAnswer, section.korean),
+                correctAnswer: correctAnswer,
               });
             }
           });
@@ -66,7 +56,13 @@ export default function QuizScreen() {
       });
     });
 
-    setQuestions(questionsArray);
+    setQuestions(shuffleArray(questionsArray));
+  };
+
+  const generateOptions = (correctAnswer, allPossibleAnswers) => {
+    const filteredAnswers = allPossibleAnswers.filter((answer) => answer && answer !== correctAnswer);
+    const randomAnswers = shuffleArray(filteredAnswers).slice(0, 3);
+    return shuffleArray([correctAnswer, ...randomAnswers]);
   };
 
   const shuffleArray = (array) => array.sort(() => Math.random() - 0.5);
@@ -121,9 +117,9 @@ export default function QuizScreen() {
       />
       {showAnswer && (
         <Text style={styles.feedback}>
-          {currentQuestion.correctAnswer === currentQuestion.options.find((o) => o === currentQuestion.correctAnswer)
+          {questions[currentQuestionIndex].correctAnswer === questions[currentQuestionIndex].options.find((o) => o === questions[currentQuestionIndex].correctAnswer)
             ? 'Correct!'
-            : 'Incorrect!'} The correct answer is "{currentQuestion.correctAnswer}".
+            : `Incorrect! The correct answer is "${questions[currentQuestionIndex].correctAnswer}".`}
         </Text>
       )}
       {showAnswer && (
