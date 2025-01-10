@@ -7,6 +7,7 @@ export default function QuizScreen() {
   const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
   const [score, setScore] = useState(0);
   const [showAnswer, setShowAnswer] = useState(false);
+  const [selectedAnswer, setSelectedAnswer] = useState(''); // Track selected answer
 
   useEffect(() => {
     generateQuizQuestions();
@@ -14,12 +15,10 @@ export default function QuizScreen() {
 
   const generateQuizQuestions = () => {
     const questionsArray = [];
-
     Object.keys(lessonsData).forEach((lessonKey) => {
       const sections = lessonsData[lessonKey].sections;
       Object.keys(sections).forEach((sectionKey) => {
         const section = sections[sectionKey];
-
         if (section.korean && section.text) {
           section.korean.forEach((word, index) => {
             const englishText = section.text[index];
@@ -55,7 +54,6 @@ export default function QuizScreen() {
         }
       });
     });
-
     setQuestions(shuffleArray(questionsArray));
   };
 
@@ -68,6 +66,7 @@ export default function QuizScreen() {
   const shuffleArray = (array) => array.sort(() => Math.random() - 0.5);
 
   const handleAnswer = (selectedAnswer) => {
+    setSelectedAnswer(selectedAnswer); // Track the selected answer
     if (selectedAnswer === questions[currentQuestionIndex].correctAnswer) {
       setScore(score + 1);
     }
@@ -76,6 +75,7 @@ export default function QuizScreen() {
 
   const nextQuestion = () => {
     setShowAnswer(false);
+    setSelectedAnswer(''); // Reset selected answer for the next question
     setCurrentQuestionIndex(currentQuestionIndex + 1);
   };
 
@@ -117,9 +117,9 @@ export default function QuizScreen() {
       />
       {showAnswer && (
         <Text style={styles.feedback}>
-          {questions[currentQuestionIndex].correctAnswer === questions[currentQuestionIndex].options.find((o) => o === questions[currentQuestionIndex].correctAnswer)
+          {selectedAnswer === currentQuestion.correctAnswer
             ? 'Correct!'
-            : `Incorrect! The correct answer is "${questions[currentQuestionIndex].correctAnswer}".`}
+            : `Incorrect! The correct answer is "${currentQuestion.correctAnswer}".`}
         </Text>
       )}
       {showAnswer && (
