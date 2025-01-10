@@ -180,4 +180,9 @@ const styles = StyleSheet.create({
     fontWeight: 'bold',
   },
   score: {
-   
+    fontSize: 20,
+    fontWeight: 'bold',
+    marginTop: 20,
+    textAlign: 'center',
+  },
+});
