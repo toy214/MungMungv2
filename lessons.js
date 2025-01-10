@@ -268,9 +268,9 @@ export const lessonsData = {
       },
       "Placing Orders": {
         text: [
-          "김치찌개 주문할게요.\n (Kimchi jjigae jumunhalgeyo.)\nI would like to order kimchi soup. [kim.tɕʰi tɕ͈i.gɛ dʑu.mun.hal.ge.jo]",
-          "음료수 좀 주시겠어요?\n(Eumryosu jom jushigesseoyo?)\nCan I get a drink? [ɯm.ɾjo.su dʑom dʑu.ɕi.gɛ.s͈ʌ.jo]",
-          "불고기를 추가할 수 있을까요?\n(Bulgogireul chuga hal su isseulkkayo?)\nCan we add bulgogi to our order? [pul.go.gi.ɾɯl tɕʰu.ga hal su i.sɯl.k͈a.jo]"
+          "김치찌개 주문할게요.\n (Kimchi jjigae jumunhalgeyo.)\nI would like to order kimchi soup.",
+          "음료수 좀 주시겠어요?\n(Eumryosu jom jushigesseoyo?)\nCan I get a drink?",
+          "불고기를 추가할 수 있을까요?\n(Bulgogireul chuga hal su isseulkkayo?)\nCan we add bulgogi to our order?"
         ],
         korean: [
           "김치찌개 주문할게요.",
@@ -280,7 +280,7 @@ export const lessonsData = {
       },
       "Paying the Bill": {
         text: [
-          "계산서 좀 주세요. (Gyesanseo jom juseyo.) - Can I have the bill, please? [kje.san.sʌ dʑom dʑu.se.jo]"
+          "계산서 좀 주세요. (Gyesanseo jom juseyo.) - Can I have the bill, please?"
         ],
         korean: [
           "계산서 좀 주세요."
@@ -316,7 +316,7 @@ export const lessonsData = {
       },
       "Additional Phrases": {
         text: [
-          "한 번 입어보세요 (Han beon ibeo boseyo) - Try it on. [han bʌn i.bʌ bo.se.jo]",
+          "한 번 입어보세요 (Han beon ibeo boseyo) - Try it on.",
           "할인 (Harin) - Discount. [ha.ɾin]"
         ],
         korean: [
