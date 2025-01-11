@@ -109,7 +109,7 @@ export default function LessonScreen({ route, navigation }) {
     sections[selectedSection]?.korean[currentIndex]?.trim() || '';
 
   return (
-    <ScrollView contentContainerStyle={styles.container}>
+    <ScrollView contentContainerStyle={styles.scrollableContainer}>
       <Text style={styles.lessonTitle}>{title}</Text>
       <Text style={styles.sectionHeader}>
         {sectionIndex}. {selectedSection}
@@ -138,6 +138,10 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     padding: 20,
     backgroundColor: '#FFF',
+  },
+  scrollableContainer: {
+    padding: 20,
+    alignItems: 'center',
   },
   lessonTitle: {
     fontSize: 26,
