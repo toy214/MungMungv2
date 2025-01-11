@@ -538,14 +538,14 @@ export const lessonsData = {
     },
 "Questions and Answers Related to Colors": {
   text: [
-    "Q: 가장 좋아하는 색깔은 무엇이에요? \n(Ga-jang jo-a-ha-neun saek-kkal-eun mu-eo-s-i-e-yo?)\nWhat is your favorite color?\nA: 저는 파란색을 좋아해요. (Jeo-neun pa-ran-saek-eul jo-a-hae-yo.)\nI like blue.",
-    "Q: 이건 무슨 색이에요? \n(I-geon mu-seun saek-i-e-yo?)\nWhat color is this?\nA: 이건 빨간색이에요. (I-geon ppal-gan-saek-i-e-yo.)\nThis is red.",
-    "Q: 이 옷은 무슨 색이에요? \n(I ot-eun mu-seun saek-i-e-yo?)\nWhat color is this shirt?\nA: 이 옷은 흰색이에요. (I ot-eun huin-saek-i-e-yo.)\nThis shirt is white."
+    "Q: 가장 좋아하는 색깔은 무엇이에요? \n(Ga-jang jo-a-ha-neun saek-kkal-eun mu-eo-s-i-e-yo?)\nQ:What is your favorite color?\n\nA:저는 파란색을 좋아해요.\n(Jeo-neun pa-ran-saek-eul jo-a-hae-yo.)\nA:I like blue.",
+    "Q: 이건 무슨 색이에요? \n(I-geon mu-seun saek-i-e-yo?)\nWhat color is this?\n\nA: 이건 빨간색이에요.\n(I-geon ppal-gan-saek-i-e-yo.)\nThis is red.",
+    "Q: 이 옷은 무슨 색이에요? \n(I ot-eun mu-seun saek-i-e-yo?)\nWhat color is this shirt?\n\nA: 이 옷은 흰색이에요.\n(I ot-eun huin-saek-i-e-yo.)\nA:This shirt is white."
   ],
   korean: [
-    "가장 좋아하는 색깔은 무엇이에요?\n저는 파란색을 좋아해요.",
-    "이건 무슨 색이에요?\n이건 빨간색이에요.",
-    "이 옷은 무슨 색이에요?\n이 옷은 흰색이에요."
+    "가장 좋아하는 색깔은 무엇이에요?\n\n저는 파란색을 좋아해요.",
+    "이건 무슨 색이에요?\n\n이건 빨간색이에요.",
+    "이 옷은 무슨 색이에요?\n\n이 옷은 흰색이에요."
           ]
         }
       }
@@ -593,17 +593,17 @@ export const lessonsData = {
           "(1) Finding a place:",
           "손님: 저기요, 여기 근처에 편의점 있어요?\n Jeo-gi-yo, yeo-gi geun-cheo-e pyeo-ui-jeom it-sseo-yo?\n(Excuse me, is there a convenience store nearby?)\n직원: 네, 이 길로 쭉 가면 오른쪽에 있어요.\nNe, i gil-lo jjok ga-myeon o-reun-jjok-e it-sseo-yo.\n(Yes, if you go straight on this road, it’s on your right.)",
           "(2) Asking for directions:",
-          "손님: 은행까지 어떻게 가요?\n Eun-haeng-kkaji eo-tteo-ke ga-yo?\n(How can I get to the bank?)\n직원: 여기서 왼쪽으로 도세요. 그다음 두 블록 지나면 은행이 보일 거예요.\nYeo-gi-seo wen-jjok-eu-ro do-se-yo. Geu-da-eum du beul-lok ji-na-myeon eun-haeng-i bo-il geo-ye-yo.\n(Turn left here. After two blocks, you’ll see the bank.)",
+          "손님: 은행까지 어떻게 가요?\n Eun-haeng-kkaji eo-tteo-ke ga-yo?\n(How can I get to the bank?)\n직원:\n여기서 왼쪽으로 도세요. 그다음 두 블록 지나면 은행이 보일 거예요.\nYeo-gi-seo wen-jjok-eu-ro do-se-yo. Geu-da-eum du beul-lok ji-na-myeon eun-haeng-i bo-il geo-ye-yo.\n(Turn left here. After two blocks, you’ll see the bank.)",
           "(3) Asking about transportation:",
-          "손님: 버스 정류장은 어디에 있어요?\n Son-nim: Beo-seu jeong-ryu-jang-eun eo-di-e it-sseo-yo?\n(Where is the bus stop?)\n직원: 이 길 끝에 있어요.\nI gil kkeut-e it-sseo-yo.\n(It’s at the end of this street.)"
+          "손님: 버스 정류장은 어디에 있어요?\n Son-nim: Beo-seu jeong-ryu-jang-eun eo-di-e it-sseo-yo?\n(Where is the bus stop?)\n직원:\n이 길 끝에 있어요.\nI gil kkeut-e it-sseo-yo.\n(It’s at the end of this street.)"
         ],
         korean: [
           "",
-          "손님: 저기요, 여기 근처에 편의점 있어요?\n직원: 네, 이 길로 쭉 가면 오른쪽에 있어요.",
+          "손님:\n 저기요, 여기 근처에 편의점 있어요?\n직원:\n네, 이 길로 쭉 가면 오른쪽에 있어요.",
           "",
-          "손님: 은행까지 어떻게 가요?\n직원: 여기서 왼쪽으로 도세요. 그다음 두 블록 지나면 은행이 보일 거예요.",
+          "손님:\n 은행까지 어떻게 가요?\n직원:\n여기서 왼쪽으로 도세요. 그다음 두 블록 지나면 은행이 보일 거예요.",
           "",
-          "손님: 버스 정류장은 어디에 있어요?\n직원: 이 길 끝에 있어요."
+          "손님:\n 버스 정류장은 어디에 있어요?\n직원:\n이 길 끝에 있어요."
         ]
       }
     }
