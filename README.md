@@ -1,11 +1,116 @@
-# Sample Snack app
+# **MungMung App**
 
-Open the `App.js` file to start writing some code. You can preview the changes directly on your phone or tablet by scanning the **QR code** or use the iOS or Android emulators. When you're done, click **Save** and share the link!
+MungMung is an interactive mobile application designed to teach the Korean language and culture. With structured lessons, quizzes, and text-to-speech functionality, MungMung makes learning Korean fun and accessible to everyone.
 
-When you're ready to see everything that Expo provides (or if you want to use your own editor) you can **Download** your project and use it with [expo cli](https://docs.expo.dev/get-started/installation/#expo-cli)).
+---
 
-All projects created in Snack are publicly available, so you can easily share the link to this project via link, or embed it on a web page with the `<>` button.
+## **Features**
+- **Interactive Lessons**:
+  - Topics include Hangul alphabet, greetings, numbers, colors, family terms, and more.
+  - Each lesson features Korean phrases, Romanization, and English translations.
+  - Text-to-speech pronunciation to practice speaking Korean.
 
-If you're having problems, you can tweet to us [@expo](https://twitter.com/expo) or ask in our [forums](https://forums.expo.dev/c/expo-dev-tools/61) or [Discord](https://chat.expo.dev/).
+- **Quizzes**:
+  - Multiple-choice questions to reinforce learning.
+  - Feedback provided for each answer, including the correct answer when incorrect.
 
-Snack is Open Source. You can find the code on the [GitHub repo](https://github.com/expo/snack).
+- **User-Friendly Navigation**:
+  - Organized screens for lessons, quizzes, and additional resources.
+  - Vibrant colors and smooth transitions enhance user engagement.
+
+- **About Section**:
+  - Insights into the app’s mission and features.
+  - Encouragement to learn Korean culture alongside the language.
+
+---
+
+## **Screens Overview**
+### **1. Title Screen**
+- Welcomes the user to the app with a warm introduction.
+- Button to navigate to the main menu.
+
+### **2. Menu Screen**
+- Displays the main navigation menu:
+  - **Start Learning**: Opens the lesson selection (`HomeScreen`).
+  - **About**: Provides an overview of the app and its mission.
+  - **Quiz**: Takes the user to the quiz section.
+
+### **3. Home Screen**
+- Lists available lessons with titles and descriptions.
+- Lessons include topics like:
+  - Hangul Alphabet
+  - Greetings
+  - Numbers
+  - Colors
+  - Family Terms
+  - Travel Phrases
+- Clicking a lesson navigates to the `LessonScreen`.
+
+### **4. Lesson Screen**
+- Displays lesson content divided into sections.
+- Features:
+  - Navigation between sections.
+  - Text-to-speech functionality for Korean phrases.
+  - Reset option to choose a different section.
+
+### **5. Quiz Screen**
+- Presents multiple-choice quizzes based on lesson topics.
+- Features:
+  - Instant feedback for selected answers.
+  - Displays the correct answer when a user selects incorrectly.
+  - Final score at the end of the quiz.
+
+### **6. About Screen**
+- Describes the app’s mission and features.
+- Highlights:
+  - Interactive lessons
+  - Fun quizzes
+  - Cultural insights
+  - Audio pronunciation for better learning
+
+---
+
+## **File Structure**
+- **`App.js`**:
+  - Main entry point for the app.
+  - Configures stack navigation with routes for all screens.
+
+- **`TitleScreen.js`**:
+  - Initial welcome screen for the app.
+
+- **`MenuScreen.js`**:
+  - Displays navigation options for lessons, about section, and quizzes.
+
+- **`HomeScreen.js`**:
+  - Lists lessons for selection.
+
+- **`LessonScreen.js`**:
+  - Displays lesson content dynamically based on the selected lesson.
+
+- **`QuizScreen.js`**:
+  - Handles quiz questions, feedback, and scoring.
+
+- **`AboutScreen.js`**:
+  - Provides an overview of the app’s purpose and features.
+
+- **`lessons.js`**:
+  - Contains structured data for all lessons.
+
+- **`quiz.js`**:
+  - Stores questions, options, and correct answers for quizzes.
+
+---
+
+## **Technologies Used**
+- **React Native**: Cross-platform mobile app development.
+- **Expo**: Simplified development and deployment.
+- **React Navigation**: Smooth navigation between screens.
+- **Expo Speech API**: Enables text-to-speech pronunciation.
+
+---
+
+## **Installation**
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/your-username/mungmung-app.git
+   cd mungmung-app
