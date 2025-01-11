@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, Text, Button, StyleSheet, FlatList } from 'react-native';
+import { View, Text, StyleSheet, FlatList, TouchableOpacity } from 'react-native';
 
 const lessons = [
   { id: '1', title: 'Lesson 1: Hangul Alphabet', description: 'Learn the fundamentals of the Korean alphabet and simple words.' },
@@ -17,17 +17,24 @@ const lessons = [
 export default function HomeScreen({ navigation }) {
   return (
     <View style={styles.container}>
-      <Text style={styles.title}>Home Screen</Text>
-      <Text>Choose a lesson to start learning:</Text>
+      <Text style={styles.title}>MungMung Korean Lessons</Text>
+      <Text style={styles.subtitle}>Choose a lesson to start learning:</Text>
       <FlatList
         data={lessons}
         keyExtractor={(item) => item.id}
-        renderItem={({ item }) => (
-          <Button
-            title={item.title}
-            onPress={() => navigation.navigate('Lesson', { title: item.title, description: item.description })}
-            color="#4CAF50"
-          />
+        renderItem={({ item, index }) => (
+          <TouchableOpacity
+            style={[
+              styles.lessonButton,
+              { backgroundColor: index % 2 === 0 ? '#FFAB40' : '#4CAF50' },
+            ]}
+            onPress={() =>
+              navigation.navigate('Lesson', { title: item.title, description: item.description })
+            }
+          >
+            <Text style={styles.lessonTitle}>{item.title}</Text>
+            <Text style={styles.lessonDescription}>{item.description}</Text>
+          </TouchableOpacity>
         )}
       />
     </View>
@@ -37,14 +44,40 @@ export default function HomeScreen({ navigation }) {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    alignItems: 'center',
-    justifyContent: 'center',
     padding: 20,
-    backgroundColor: '#E8F5E9',
+    backgroundColor: '#FFFDE7',
   },
   title: {
-    fontSize: 24,
+    fontSize: 26,
     fontWeight: 'bold',
+    textAlign: 'center',
+    marginBottom: 10,
+    color: '#3F51B5',
+  },
+  subtitle: {
+    fontSize: 18,
+    textAlign: 'center',
     marginBottom: 20,
+    color: '#009688',
+  },
+  lessonButton: {
+    padding: 15,
+    marginVertical: 8,
+    borderRadius: 15,
+    elevation: 3,
+    shadowColor: '#000',
+    shadowOffset: { width: 0, height: 2 },
+    shadowOpacity: 0.25,
+    shadowRadius: 3.5,
+  },
+  lessonTitle: {
+    fontSize: 18,
+    fontWeight: 'bold',
+    color: '#FFF',
+    marginBottom: 5,
+  },
+  lessonDescription: {
+    fontSize: 14,
+    color: '#FFF',
   },
 });
