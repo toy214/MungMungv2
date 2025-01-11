@@ -294,14 +294,14 @@ export const lessonsData = {
         text: [
           "이거 있어요?\n(Igeo itsseoyo?)\nDo you have this?",  
           "이거 얼마예요?\n(Igeo eolmayeyo?)\nHow much is this?",
-          "좀 깎아주세요\n(Jom kakkajuseyo)\nPlease give me a discount.",
-          "더 주세요\n(Deo juseyo)\nPlease add more."
+          "좀 깎아주세요.\n(Jom kakkajuseyo)\nPlease give me a discount.",
+          "더 주세요.\n(Deo juseyo)\nPlease add more."
         ],
         korean: [
-          "이거 있어요",  
-          "이거 얼마예요",
-          "좀 깎아주세요",
-          "더 주세요"
+          "이거 있어요?",  
+          "이거 얼마예요?",
+          "좀 깎아주세요.",
+          "더 주세요."
         ]
       },
       "Key Terms": {
@@ -316,11 +316,11 @@ export const lessonsData = {
       },
       "Additional Phrases": {
         text: [
-          "한 번 입어보세요\n(Han beon ibeo boseyo)\nTry it on.",
+          "한 번 입어보세요.\n(Han beon ibeo boseyo)\nTry it on.",
           "할인\n(Harin)\nDiscount."
         ],
         korean: [
-          "한 번 입어보세요",
+          "한 번 입어보세요.",
           "할인"
         ]
       }
@@ -432,6 +432,7 @@ export const lessonsData = {
         "딸\n(Ttal)\nDaughter"
       ],
       korean: [
+        "",
         "아버지",
         "어머니",
         "형",
