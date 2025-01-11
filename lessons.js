@@ -196,24 +196,24 @@ export const lessonsData = {
       "Days": {
         text: [
           "Days are also read using Sino-Korean numbers + 일 (day).",
-          "1st\n         1일\n          il-il",
-          "2nd\n         2일\n          i-il",
-          "3rd\n         3일\n          sam-il",
-          "4th\n         4일\n          sa-il",
-          "5th\n         5일\n          o-il",
-          "10th\n        10일\n         sip-il",
-          "15th\n        15일\n       sip-o-il",
-          "20th\n      20일\n       i-sip-il",
-          "25th\n      25일\n       i-sip-o-il",
-          "31st\n        31일\n       sam-sip-il"
+          "1st         1일          il-il",
+          "2nd         2일          i-il",
+          "3rd         3일          sam-il",
+          "4th         4일          sa-il",
+          "5th         5일          o-il",
+          "10th        10일         sip-il",
+          "15th        15일         sip-o-il",
+          "20th        20일         i-sip-il",
+          "25th        25일         i-sip-o-il",
+          "31st        31일         sam-sip-il"
         ],
         korean: ["", "1일", "2일", "3일", "4일", "5일", "10일", "15일", "20일", "25일", "31일"]
       },
       "Complete Date": {
         text: [
           "To say the full date, read it in this order: Month + Day.",
-          "오늘은 1월 5일이에요. (Today is January 5th.) o-neul-eun il-wol o-il-i-e-yo.",
-          "생일이 3월 15일이에요. (My birthday is March 15th.) saeng-il-i sam-wol sip-o-il-i-e-yo."
+          "오늘은 1월 5일이에요.\n(Today is January 5th.)\no-neul-eun il-wol o-il-i-e-yo.",
+          "생일이 3월 15일이에요.\n(My birthday is March 15th.)\nsaeng-il-i sam-wol sip-o-il-i-e-yo."
         ],
         korean: ["","오늘은 1월 5일이에요.", "생일이 3월 15일이에요."]
       },
@@ -280,7 +280,7 @@ export const lessonsData = {
       },
       "Paying the Bill": {
         text: [
-          "계산서 좀 주세요. (Gyesanseo jom juseyo.) - Can I have the bill, please?"
+          "계산서 좀 주세요.\n(Gyesanseo jom juseyo.)\nCan I have the bill, please?"
         ],
         korean: [
           "계산서 좀 주세요."
