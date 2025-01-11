@@ -3,9 +3,8 @@ import {
   View,
   Text,
   StyleSheet,
-  Button,
-  ScrollView,
   TouchableOpacity,
+  ScrollView,
   Alert,
 } from 'react-native';
 import * as Speech from 'expo-speech';
@@ -24,7 +23,12 @@ export default function LessonScreen({ route, navigation }) {
         <Text style={styles.text}>
           Sorry, the requested lesson could not be found.
         </Text>
-        <Button title="Go Back" onPress={() => navigation.goBack()} />
+        <TouchableOpacity
+          style={styles.actionButton}
+          onPress={() => navigation.goBack()}
+        >
+          <Text style={styles.actionButtonText}>Go Back</Text>
+        </TouchableOpacity>
       </View>
     );
   }
@@ -99,7 +103,9 @@ export default function LessonScreen({ route, navigation }) {
             key={section}
             style={[
               styles.sectionButton,
-              { backgroundColor: index % 2 === 0 ? '#FFAB40' : '#4CAF50' },
+              {
+                backgroundColor: index % 2 === 0 ? '#FFAB40' : '#4CAF50',
+              },
             ]}
             onPress={() => setSelectedSection(section)}
           >
@@ -176,7 +182,7 @@ const styles = StyleSheet.create({
     padding: 10,
     marginBottom: 15,
     backgroundColor: '#FFEB3B',
-    borderRadius: 8,
+    borderRadius: 15,
   },
   introductionText: {
     fontSize: 16,
@@ -212,11 +218,16 @@ const styles = StyleSheet.create({
     textAlign: 'center',
   },
   sectionButton: {
-    padding: 15,
-    marginVertical: 10,
-    borderRadius: 5,
-    width: '80%',
+    padding: 12,
+    marginVertical: 8,
+    borderRadius: 15,
+    width: '90%',
     alignItems: 'center',
+    elevation: 2,
+    shadowColor: '#000',
+    shadowOffset: { width: 0, height: 2 },
+    shadowOpacity: 0.25,
+    shadowRadius: 3.5,
   },
   sectionText: {
     fontSize: 18,
@@ -226,7 +237,7 @@ const styles = StyleSheet.create({
   actionButton: {
     padding: 10,
     marginHorizontal: 10,
-    borderRadius: 5,
+    borderRadius: 20,
     alignItems: 'center',
     width: 100,
   },
