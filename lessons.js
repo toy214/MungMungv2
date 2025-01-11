@@ -591,19 +591,19 @@ export const lessonsData = {
       "Example Conversations": {
         text: [
           "(1) Finding a place:",
-          "손님: 저기요, 여기 근처에 편의점 있어요?\n Jeo-gi-yo, yeo-gi geun-cheo-e pyeo-ui-jeom it-sseo-yo?\n(Excuse me, is there a convenience store nearby?)\n직원: 네, 이 길로 쭉 가면 오른쪽에 있어요.\nNe, i gil-lo jjok ga-myeon o-reun-jjok-e it-sseo-yo.\n(Yes, if you go straight on this road, it’s on your right.)",
+          "손님: 저기요, 여기 근처에 편의점 있어요?\n Jeo-gi-yo, yeo-gi geun-cheo-e pyeo-ui-jeom it-sseo-yo?\n(Customer: Excuse me, is there a convenience store nearby?)\n직원: 네, 이 길로 쭉 가면 오른쪽에 있어요.\nNe, i gil-lo jjok ga-myeon o-reun-jjok-e it-sseo-yo.\n(Employee: Yes, if you go straight on this road, it’s on your right.)",
           "(2) Asking for directions:",
-          "손님: 은행까지 어떻게 가요?\n Eun-haeng-kkaji eo-tteo-ke ga-yo?\n(How can I get to the bank?)\n직원:\n여기서 왼쪽으로 도세요. 그다음 두 블록 지나면 은행이 보일 거예요.\nYeo-gi-seo wen-jjok-eu-ro do-se-yo. Geu-da-eum du beul-lok ji-na-myeon eun-haeng-i bo-il geo-ye-yo.\n(Turn left here. After two blocks, you’ll see the bank.)",
+          "손님: 은행까지 어떻게 가요?\n Eun-haeng-kkaji eo-tteo-ke ga-yo?\n(How can I get to the bank?)\n직원:\n여기서 왼쪽으로 도세요. 그다음 두 블록 지나면 은행이 보일 거예요.\nYeo-gi-seo wen-jjok-eu-ro do-se-yo. Geu-da-eum du beul-lok ji-na-myeon eun-haeng-i bo-il geo-ye-yo.\n(Employee: Turn left here. After two blocks, you’ll see the bank.)",
           "(3) Asking about transportation:",
-          "손님: 버스 정류장은 어디에 있어요?\n Son-nim: Beo-seu jeong-ryu-jang-eun eo-di-e it-sseo-yo?\n(Where is the bus stop?)\n직원:\n이 길 끝에 있어요.\nI gil kkeut-e it-sseo-yo.\n(It’s at the end of this street.)"
+          "손님: 버스 정류장은 어디에 있어요?\n Son-nim: Beo-seu jeong-ryu-jang-eun eo-di-e it-sseo-yo?\n(Customer: Where is the bus stop?)\n직원:\n이 길 끝에 있어요.\nI gil kkeut-e it-sseo-yo.\n(Employee: It’s at the end of this street.)"
         ],
         korean: [
           "",
-          "손님:\n 저기요, 여기 근처에 편의점 있어요?\n직원:\n네, 이 길로 쭉 가면 오른쪽에 있어요.",
+          "저기요, 여기 근처에 편의점 있어요?\n직원:\n네, 이 길로 쭉 가면 오른쪽에 있어요.",
           "",
-          "손님:\n 은행까지 어떻게 가요?\n직원:\n여기서 왼쪽으로 도세요. 그다음 두 블록 지나면 은행이 보일 거예요.",
+          "은행까지 어떻게 가요?\n직원:\n여기서 왼쪽으로 도세요. 그다음 두 블록 지나면 은행이 보일 거예요.",
           "",
-          "손님:\n 버스 정류장은 어디에 있어요?\n직원:\n이 길 끝에 있어요."
+          "버스 정류장은 어디에 있어요?\n직원:\n이 길 끝에 있어요."
         ]
       }
     }
