@@ -155,13 +155,12 @@ export default function LessonScreen({ route, navigation }) {
           disabled={currentIndex === sections[selectedSection]?.text.length - 1}
         />
       </View>
-      <View style={styles.changeSectionContainer}>
-        <ActionButton
-          title="Change Section"
-          onPress={resetSelection}
-          color="#2196F3"
-        />
-      </View>
+      <TouchableOpacity
+        style={styles.flatButton}
+        onPress={resetSelection}
+      >
+        <Text style={styles.flatButtonText}>Change Section</Text>
+      </TouchableOpacity>
     </ScrollView>
   );
 }
@@ -255,12 +254,23 @@ const styles = StyleSheet.create({
   },
   buttonContainer: {
     flexDirection: 'row',
-    justifyContent: 'space-between', // Space between Back, Hear, and Next
+    justifyContent: 'space-between',
     width: '100%',
-    marginTop: 20,
-    marginBottom: 20, // Add space between navigation and change section buttons
+    marginBottom: 20,
   },
-  changeSectionContainer: {
+  flatButton: {
+    backgroundColor: '#2196F3',
+    width: '90%', // Full-width style
+    padding: 15,
+    borderRadius: 10,
     alignItems: 'center',
+    marginTop: 10,
+    alignSelf: 'center', // Ensure centered alignment
+  },
+  flatButtonText: {
+    fontSize: 16,
+    fontWeight: 'bold',
+    color: '#FFF',
+    textAlign: 'center',
   },
 });
