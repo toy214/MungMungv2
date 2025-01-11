@@ -138,7 +138,7 @@ export default function LessonScreen({ route, navigation }) {
       </Text>
       {sectionText && <Text style={styles.text}>{sectionText}</Text>}
       {sectionKorean && <Text style={styles.word}>{sectionKorean}</Text>}
-      <View style={styles.navigationButtons}>
+      <View style={styles.buttonContainer}>
         <ActionButton
           title="Back"
           onPress={goBack}
@@ -155,12 +155,13 @@ export default function LessonScreen({ route, navigation }) {
           disabled={currentIndex === sections[selectedSection]?.text.length - 1}
         />
       </View>
-      <ActionButton
-        title="Change Section"
-        onPress={resetSelection}
-        color="#2196F3"
-        style={{ marginTop: 20 }}
-      />
+      <View style={styles.changeSectionContainer}>
+        <ActionButton
+          title="Change Section"
+          onPress={resetSelection}
+          color="#2196F3"
+        />
+      </View>
     </ScrollView>
   );
 }
@@ -252,10 +253,14 @@ const styles = StyleSheet.create({
     fontWeight: 'bold',
     textAlign: 'center',
   },
-  navigationButtons: {
+  buttonContainer: {
     flexDirection: 'row',
-    justifyContent: 'space-evenly', // Improved spacing between buttons
+    justifyContent: 'space-between', // Space between Back, Hear, and Next
     width: '100%',
     marginTop: 20,
+    marginBottom: 20, // Add space between navigation and change section buttons
+  },
+  changeSectionContainer: {
+    alignItems: 'center',
   },
 });
