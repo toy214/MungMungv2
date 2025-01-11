@@ -18,10 +18,7 @@
     },
     "android": {
       "package": "com.mungmung.learningapp",
-      "permissions": [
-        "INTERNET",
-        "CAMERA"
-      ],
+      "permissions": ["INTERNET", "CAMERA"],
       "versionCode": 1,
       "softwareKeyboardLayoutMode": "pan",
       "adaptiveIcon": {
