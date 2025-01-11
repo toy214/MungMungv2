@@ -477,8 +477,8 @@ export const lessonsData = {
     },
     "Questions and Answers": {
       text: [
-        "Q: 당신의 가족은 몇 명이에요?\n(Dang-shin-ui ga-jok-eun myeot myeong-i-e-yo?)\nHow many people are in your family?\nA: 저희 가족은 네 명이에요. (Jeo-hui ga-jok-eun ne myeong-i-e-yo.): \nMy family has four people.",
-        "Q: 형제/자매가 있어요?\n(Hyeong-je/ja-mae-ga it-seo-yo?)\nDo you have any siblings?\nA: 네, 저는 동생이 있어요. (Ne, jeo-neun dong-saeng-i it-seo-yo.): \nYes, I have a younger sibling."
+        "Q: 당신의 가족은 몇 명이에요?\n(Dang-shin-ui ga-jok-eun myeot myeong-i-e-yo?)\nHow many people are in your family?\nA: 저희 가족은 네 명이에요.\n(Jeo-hui ga-jok-eun ne myeong-i-e-yo.): \nA:My family has four people.",
+        "Q: 형제/자매가 있어요?\n(Hyeong-je/ja-mae-ga it-seo-yo?)\nDo you have any siblings?\nA: 네, 저는 동생이 있어요.\n(Ne, jeo-neun dong-saeng-i it-seo-yo.): \nA:Yes, I have a younger sibling."
       ],
       korean: [
         "당신의 가족은 몇 명이에요? \n저희 가족은 네 명이에요.",
