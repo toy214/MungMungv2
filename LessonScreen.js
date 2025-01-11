@@ -155,7 +155,13 @@ export default function LessonScreen({ route, navigation }) {
           disabled={currentIndex === sections[selectedSection]?.text.length - 1}
         />
       </View>
-      <ActionButton title="Change Section" onPress={resetSelection} color="#2196F3" />
+      <View style={styles.changeSectionContainer}>
+        <ActionButton
+          title="Change Section"
+          onPress={resetSelection}
+          color="#2196F3"
+        />
+      </View>
     </ScrollView>
   );
 }
@@ -252,5 +258,9 @@ const styles = StyleSheet.create({
     justifyContent: 'space-between',
     marginTop: 20,
     width: '100%',
+  },
+  changeSectionContainer: {
+    marginTop: 30, // Add extra spacing between the "Change Section" button and the main buttons
+    alignItems: 'center',
   },
 });
