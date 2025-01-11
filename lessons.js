@@ -1,13 +1,10 @@
 // lessons.js
 export const lessonsData = {
     "Lesson 1: Hangul Alphabet": {
-  sections: {
-    "Introduction": {
-      text: [
-        "Introduce Hangul:\nConsonants (자음)/ Vowels (모음): Each syllable in Hangul is formed by combining a consonant and a vowel. Some syllables may also include a final consonant, called the batchim."
-      ],
-      korean: [""]
-    },
+    introduction: 
+      "Hangul is the Korean alphabet system. Each syllable in Hangul is formed by combining a consonant and a vowel. Some syllables may also include a final consonant, called the batchim. " +
+      "It consists of 14 basic consonants, 10 basic vowels, and several compound sounds. Learning Hangul is the first step to mastering Korean!",
+    sections: {
     "Consonants": {
       text: [
         "Basic Consonants (14):",
