@@ -70,8 +70,17 @@ export default function LessonScreen({ route, navigation }) {
     );
   };
 
-  const ActionButton = ({ title, onPress, color = '#4CAF50', disabled }) => (
-    <Button title={title} onPress={onPress} color={color} disabled={disabled} />
+  const ActionButton = ({ title, onPress, color, disabled }) => (
+    <TouchableOpacity
+      style={[
+        styles.actionButton,
+        { backgroundColor: color || '#4CAF50', opacity: disabled ? 0.5 : 1 },
+      ]}
+      onPress={onPress}
+      disabled={disabled}
+    >
+      <Text style={styles.actionButtonText}>{title}</Text>
+    </TouchableOpacity>
   );
 
   // Section Selection Screen
@@ -88,7 +97,10 @@ export default function LessonScreen({ route, navigation }) {
         {Object.keys(sections).map((section, index) => (
           <TouchableOpacity
             key={section}
-            style={styles.sectionButton}
+            style={[
+              styles.sectionButton,
+              { backgroundColor: index % 2 === 0 ? '#FFAB40' : '#4CAF50' },
+            ]}
             onPress={() => setSelectedSection(section)}
           >
             <Text style={styles.sectionText}>
@@ -96,7 +108,11 @@ export default function LessonScreen({ route, navigation }) {
             </Text>
           </TouchableOpacity>
         ))}
-        <ActionButton title="Go Back to Lessons" onPress={() => navigation.goBack()} />
+        <ActionButton
+          title="Go Back to Lessons"
+          onPress={() => navigation.goBack()}
+          color="#F44336"
+        />
       </ScrollView>
     );
   }
@@ -117,17 +133,23 @@ export default function LessonScreen({ route, navigation }) {
       {sectionText && <Text style={styles.text}>{sectionText}</Text>}
       {sectionKorean && <Text style={styles.word}>{sectionKorean}</Text>}
       <View style={styles.buttonContainer}>
-        <ActionButton title="Back" onPress={goBack} disabled={currentIndex === 0} />
+        <ActionButton
+          title="Back"
+          onPress={goBack}
+          color="#FF5722"
+          disabled={currentIndex === 0}
+        />
         {sectionKorean && (
-          <ActionButton title="Hear" onPress={speak} color="#4CAF50" />
+          <ActionButton title="Hear" onPress={speak} color="#FFC107" />
         )}
         <ActionButton
           title="Next"
           onPress={goNext}
+          color="#8BC34A"
           disabled={currentIndex === sections[selectedSection]?.text.length - 1}
         />
       </View>
-      <ActionButton title="Change Section" onPress={resetSelection} color="#FF5722" />
+      <ActionButton title="Change Section" onPress={resetSelection} color="#2196F3" />
     </ScrollView>
   );
 }
@@ -137,7 +159,7 @@ const styles = StyleSheet.create({
     flex: 1,
     alignItems: 'center',
     padding: 20,
-    backgroundColor: '#FFF',
+    backgroundColor: '#FFFDE7',
   },
   scrollableContainer: {
     padding: 20,
@@ -148,6 +170,7 @@ const styles = StyleSheet.create({
     fontWeight: 'bold',
     marginBottom: 10,
     textAlign: 'center',
+    color: '#3F51B5',
   },
   introductionContainer: {
     padding: 10,
@@ -165,6 +188,7 @@ const styles = StyleSheet.create({
     fontSize: 18,
     fontWeight: 'bold',
     marginBottom: 20,
+    color: '#009688',
   },
   sectionHeader: {
     fontSize: 20,
@@ -178,16 +202,16 @@ const styles = StyleSheet.create({
     textAlign: 'center',
     marginBottom: 15,
     lineHeight: 24,
+    color: '#795548',
   },
   word: {
     fontSize: 32,
     fontWeight: 'bold',
     marginVertical: 15,
-    color: '#4CAF50',
+    color: '#673AB7',
     textAlign: 'center',
   },
   sectionButton: {
-    backgroundColor: '#4CAF50',
     padding: 15,
     marginVertical: 10,
     borderRadius: 5,
@@ -197,6 +221,19 @@ const styles = StyleSheet.create({
   sectionText: {
     fontSize: 18,
     color: '#FFF',
+    textAlign: 'center',
+  },
+  actionButton: {
+    padding: 10,
+    marginHorizontal: 10,
+    borderRadius: 5,
+    alignItems: 'center',
+    width: 100,
+  },
+  actionButtonText: {
+    fontSize: 16,
+    color: '#FFF',
+    fontWeight: 'bold',
     textAlign: 'center',
   },
   buttonContainer: {
