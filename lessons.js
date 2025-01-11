@@ -539,7 +539,7 @@ export const lessonsData = {
 "Questions and Answers Related to Colors": {
   text: [
     "Q: 가장 좋아하는 색깔은 무엇이에요? \n(Ga-jang jo-a-ha-neun saek-kkal-eun mu-eo-s-i-e-yo?)\nQ:What is your favorite color?\n\nA:저는 파란색을 좋아해요.\n(Jeo-neun pa-ran-saek-eul jo-a-hae-yo.)\nA:I like blue.",
-    "Q: 이건 무슨 색이에요? \n(I-geon mu-seun saek-i-e-yo?)\nWhat color is this?\n\nA: 이건 빨간색이에요.\n(I-geon ppal-gan-saek-i-e-yo.)\nThis is red.",
+    "Q: 이건 무슨 색이에요? \n(I-geon mu-seun saek-i-e-yo?)\nWhat color is this?\n\nA: 이건 빨간색이에요.\n(I-geon ppal-gan-saek-i-e-yo.)\nA:This is red.",
     "Q: 이 옷은 무슨 색이에요? \n(I ot-eun mu-seun saek-i-e-yo?)\nWhat color is this shirt?\n\nA: 이 옷은 흰색이에요.\n(I ot-eun huin-saek-i-e-yo.)\nA:This shirt is white."
   ],
   korean: [
