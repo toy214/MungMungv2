@@ -1,7 +1,7 @@
 export const quizData = [
   {
     question: 'What does "ㄷ" represent in English?',
-    correctAnswer: '"d" as in "dog" or "t" as in "top"',
+    correctAnswer: '"d" as in "dog"',
     options: [
       '"n" as in "no"',
       '"m" as in "man"',
