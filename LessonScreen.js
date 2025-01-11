@@ -24,26 +24,18 @@ export default function LessonScreen({ route, navigation }) {
         <Text style={styles.text}>
           Sorry, the requested lesson could not be found.
         </Text>
+        <Button title="Go Back" onPress={() => navigation.goBack()} />
       </View>
     );
   }
 
   const sections = lesson.sections || {}; // Fallback if sections are undefined
-  if (Object.keys(sections).length === 0) {
-    return (
-      <View style={styles.container}>
-        <Text style={styles.text}>This lesson has no sections available.</Text>
-      </View>
-    );
-  }
-
-  const lessonNumber = title.split(' ')[1]; // Extract the lesson number dynamically
 
   const speak = () => {
     const currentWord =
-      sections[selectedSection]?.korean[currentIndex]?.trim() || "";
+      sections[selectedSection]?.korean[currentIndex]?.trim() || '';
     if (!currentWord) {
-      console.warn('No word to speak');
+      Alert.alert('Nothing to Speak', 'No word is available for pronunciation.');
       return;
     }
     Speech.speak(currentWord, { language: 'ko', rate: 0.65 });
@@ -78,11 +70,20 @@ export default function LessonScreen({ route, navigation }) {
     );
   };
 
+  const ActionButton = ({ title, onPress, color = '#4CAF50', disabled }) => (
+    <Button title={title} onPress={onPress} color={color} disabled={disabled} />
+  );
+
   // Section Selection Screen
   if (!selectedSection) {
     return (
       <ScrollView contentContainerStyle={styles.container}>
         <Text style={styles.lessonTitle}>{title}</Text>
+        {lesson.introduction && (
+          <View style={styles.introductionContainer}>
+            <Text style={styles.introductionText}>{lesson.introduction}</Text>
+          </View>
+        )}
         <Text style={styles.headerText}>Choose a Section:</Text>
         {Object.keys(sections).map((section, index) => (
           <TouchableOpacity
@@ -95,18 +96,17 @@ export default function LessonScreen({ route, navigation }) {
             </Text>
           </TouchableOpacity>
         ))}
-        <Button title="Go Back to Lessons" onPress={() => navigation.goBack()} />
+        <ActionButton title="Go Back to Lessons" onPress={() => navigation.goBack()} />
       </ScrollView>
     );
   }
 
   // Section Content Screen
-  const sectionIndex =
-    Object.keys(sections).indexOf(selectedSection) + 1; // Get the correct section index
+  const sectionIndex = Object.keys(sections).indexOf(selectedSection) + 1;
   const sectionText =
-    (sections[selectedSection]?.text[currentIndex] || "No content available.").trim();
+    sections[selectedSection]?.text[currentIndex]?.trim() || 'No content available.';
   const sectionKorean =
-    (sections[selectedSection]?.korean[currentIndex] || "").trim();
+    sections[selectedSection]?.korean[currentIndex]?.trim() || '';
 
   return (
     <ScrollView contentContainerStyle={styles.container}>
@@ -117,32 +117,17 @@ export default function LessonScreen({ route, navigation }) {
       {sectionText && <Text style={styles.text}>{sectionText}</Text>}
       {sectionKorean && <Text style={styles.word}>{sectionKorean}</Text>}
       <View style={styles.buttonContainer}>
-        <Button
-          title="Back"
-          onPress={goBack}
-          disabled={currentIndex === 0}
-        />
+        <ActionButton title="Back" onPress={goBack} disabled={currentIndex === 0} />
         {sectionKorean && (
-          <Button
-            title="Hear"
-            onPress={speak}
-            color="#4CAF50"
-          />
+          <ActionButton title="Hear" onPress={speak} color="#4CAF50" />
         )}
-        <Button
+        <ActionButton
           title="Next"
           onPress={goNext}
-          disabled={
-            currentIndex ===
-            sections[selectedSection]?.text.length - 1
-          }
+          disabled={currentIndex === sections[selectedSection]?.text.length - 1}
         />
       </View>
-      <Button
-        title="Change Section"
-        onPress={resetSelection}
-        color="#FF5722"
-      />
+      <ActionButton title="Change Section" onPress={resetSelection} color="#FF5722" />
     </ScrollView>
   );
 }
@@ -151,7 +136,6 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     alignItems: 'center',
-    justifyContent: 'center',
     padding: 20,
     backgroundColor: '#FFF',
   },
@@ -159,6 +143,18 @@ const styles = StyleSheet.create({
     fontSize: 26,
     fontWeight: 'bold',
     marginBottom: 10,
+    textAlign: 'center',
+  },
+  introductionContainer: {
+    padding: 10,
+    marginBottom: 15,
+    backgroundColor: '#FFEB3B',
+    borderRadius: 8,
+  },
+  introductionText: {
+    fontSize: 16,
+    color: '#000',
+    fontStyle: 'italic',
     textAlign: 'center',
   },
   headerText: {
@@ -170,19 +166,21 @@ const styles = StyleSheet.create({
     fontSize: 20,
     fontWeight: 'bold',
     marginBottom: 15,
-    textAlign: 'center',
     color: '#4CAF50',
+    textAlign: 'center',
   },
   text: {
     fontSize: 16,
     textAlign: 'center',
+    marginBottom: 15,
     lineHeight: 24,
-    marginBottom: 20,
   },
   word: {
     fontSize: 32,
     fontWeight: 'bold',
-    marginVertical: 20,
+    marginVertical: 15,
+    color: '#4CAF50',
+    textAlign: 'center',
   },
   sectionButton: {
     backgroundColor: '#4CAF50',
@@ -195,11 +193,12 @@ const styles = StyleSheet.create({
   sectionText: {
     fontSize: 18,
     color: '#FFF',
+    textAlign: 'center',
   },
   buttonContainer: {
     flexDirection: 'row',
     justifyContent: 'space-between',
-    width: '100%',
     marginTop: 20,
+    width: '100%',
   },
 });
