@@ -5,7 +5,7 @@ export const quizData = [
     options: [
       '"n" as in "no"',
       '"m" as in "man"',
-      '"d" as in "dog" or "t" as in "top"',
+      '"d" as in "dog"',
       '"k" as in "key"',
     ],
   },
